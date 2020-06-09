@@ -1,0 +1,217 @@
+Simulator report for JSQ
+Sat Jan 06 00:14:11 2018
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 57 nodes     ;
+; Simulation Coverage         ;      98.25 % ;
+; Total Number of Transitions ; 9841         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Vector input source                                                                        ; JSQ.vwf    ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      98.25 % ;
+; Total nodes checked                                 ; 57           ;
+; Total output ports checked                          ; 57           ;
+; Total output ports with complete 1/0-value coverage ; 56           ;
+; Total output ports with no 1/0-value coverage       ; 0            ;
+; Total output ports with no 1-value coverage         ; 0            ;
+; Total output ports with no 0-value coverage         ; 1            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------+
+; Complete 1/0-Value Coverage                          ;
++----------------+------------------+------------------+
+; Node Name      ; Output Port Name ; Output Port Type ;
++----------------+------------------+------------------+
+; |JSQ|Q~0       ; |JSQ|Q~0         ; out              ;
+; |JSQ|Q~1       ; |JSQ|Q~1         ; out              ;
+; |JSQ|Q~2       ; |JSQ|Q~2         ; out              ;
+; |JSQ|Q~3       ; |JSQ|Q~3         ; out              ;
+; |JSQ|Q~4       ; |JSQ|Q~4         ; out              ;
+; |JSQ|Q~5       ; |JSQ|Q~5         ; out              ;
+; |JSQ|Q~6       ; |JSQ|Q~6         ; out              ;
+; |JSQ|Q~7       ; |JSQ|Q~7         ; out              ;
+; |JSQ|Q~8       ; |JSQ|Q~8         ; out              ;
+; |JSQ|Q~9       ; |JSQ|Q~9         ; out              ;
+; |JSQ|Q~10      ; |JSQ|Q~10        ; out              ;
+; |JSQ|Q~11      ; |JSQ|Q~11        ; out              ;
+; |JSQ|Q~12      ; |JSQ|Q~12        ; out              ;
+; |JSQ|Q~13      ; |JSQ|Q~13        ; out              ;
+; |JSQ|Q~14      ; |JSQ|Q~14        ; out              ;
+; |JSQ|Q~15      ; |JSQ|Q~15        ; out              ;
+; |JSQ|Q[7]      ; |JSQ|Q[7]        ; regout           ;
+; |JSQ|Q[6]      ; |JSQ|Q[6]        ; regout           ;
+; |JSQ|Q[5]      ; |JSQ|Q[5]        ; regout           ;
+; |JSQ|Q[4]      ; |JSQ|Q[4]        ; regout           ;
+; |JSQ|Q[3]      ; |JSQ|Q[3]        ; regout           ;
+; |JSQ|Q[2]      ; |JSQ|Q[2]        ; regout           ;
+; |JSQ|Q[1]      ; |JSQ|Q[1]        ; regout           ;
+; |JSQ|Q[0]      ; |JSQ|Q[0]        ; regout           ;
+; |JSQ|LDPC      ; |JSQ|LDPC        ; out              ;
+; |JSQ|INPC      ; |JSQ|INPC        ; out              ;
+; |JSQ|clk       ; |JSQ|clk         ; out              ;
+; |JSQ|BUScin[0] ; |JSQ|BUScin[0]   ; out              ;
+; |JSQ|BUScin[1] ; |JSQ|BUScin[1]   ; out              ;
+; |JSQ|BUScin[2] ; |JSQ|BUScin[2]   ; out              ;
+; |JSQ|BUScin[3] ; |JSQ|BUScin[3]   ; out              ;
+; |JSQ|BUScin[4] ; |JSQ|BUScin[4]   ; out              ;
+; |JSQ|BUScin[5] ; |JSQ|BUScin[5]   ; out              ;
+; |JSQ|BUScin[6] ; |JSQ|BUScin[6]   ; out              ;
+; |JSQ|BUScin[7] ; |JSQ|BUScin[7]   ; out              ;
+; |JSQ|BUSout[0] ; |JSQ|BUSout[0]   ; pin_out          ;
+; |JSQ|BUSout[1] ; |JSQ|BUSout[1]   ; pin_out          ;
+; |JSQ|BUSout[2] ; |JSQ|BUSout[2]   ; pin_out          ;
+; |JSQ|BUSout[3] ; |JSQ|BUSout[3]   ; pin_out          ;
+; |JSQ|BUSout[4] ; |JSQ|BUSout[4]   ; pin_out          ;
+; |JSQ|BUSout[5] ; |JSQ|BUSout[5]   ; pin_out          ;
+; |JSQ|BUSout[6] ; |JSQ|BUSout[6]   ; pin_out          ;
+; |JSQ|BUSout[7] ; |JSQ|BUSout[7]   ; pin_out          ;
+; |JSQ|Add0~0    ; |JSQ|Add0~0      ; out0             ;
+; |JSQ|Add0~1    ; |JSQ|Add0~1      ; out0             ;
+; |JSQ|Add0~2    ; |JSQ|Add0~2      ; out0             ;
+; |JSQ|Add0~3    ; |JSQ|Add0~3      ; out0             ;
+; |JSQ|Add0~4    ; |JSQ|Add0~4      ; out0             ;
+; |JSQ|Add0~5    ; |JSQ|Add0~5      ; out0             ;
+; |JSQ|Add0~6    ; |JSQ|Add0~6      ; out0             ;
+; |JSQ|Add0~7    ; |JSQ|Add0~7      ; out0             ;
+; |JSQ|Add0~8    ; |JSQ|Add0~8      ; out0             ;
+; |JSQ|Add0~9    ; |JSQ|Add0~9      ; out0             ;
+; |JSQ|Add0~10   ; |JSQ|Add0~10     ; out0             ;
+; |JSQ|Add0~11   ; |JSQ|Add0~11     ; out0             ;
+; |JSQ|Add0~12   ; |JSQ|Add0~12     ; out0             ;
++----------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------+
+; Missing 1-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------+
+; Missing 0-Value Coverage                         ;
++------------+------------------+------------------+
+; Node Name  ; Output Port Name ; Output Port Type ;
++------------+------------------+------------------+
+; |JSQ|reset ; |JSQ|reset       ; out              ;
++------------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Jan 06 00:14:11 2018
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off JSQ -c JSQ
+Info: Using vector source file "E:/Quartus_two/cpu/Ö¸Áî¼ÆÊýÆ÷/JSQ.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      98.25 %
+Info: Number of transitions in simulation is 9841
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 208 megabytes
+    Info: Processing ended: Sat Jan 06 00:14:12 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

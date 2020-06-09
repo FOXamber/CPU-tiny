@@ -1,0 +1,304 @@
+Simulator report for ZLYMQ
+Sat Jan 06 00:44:28 2018
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 145 nodes    ;
+; Simulation Coverage         ;     100.00 % ;
+; Total Number of Transitions ; 10965        ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Vector input source                                                                        ; ZLYMQ.vwf  ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;     100.00 % ;
+; Total nodes checked                                 ; 145          ;
+; Total output ports checked                          ; 145          ;
+; Total output ports with complete 1/0-value coverage ; 145          ;
+; Total output ports with no 1/0-value coverage       ; 0            ;
+; Total output ports with no 1-value coverage         ; 0            ;
+; Total output ports with no 0-value coverage         ; 0            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                ;
++--------------------+--------------------+------------------+
+; Node Name          ; Output Port Name   ; Output Port Type ;
++--------------------+--------------------+------------------+
+; |ZLYMQ|MOVC~0      ; |ZLYMQ|MOVC~0      ; out              ;
+; |ZLYMQ|MOVA~0      ; |ZLYMQ|MOVA~0      ; out              ;
+; |ZLYMQ|SHL~0       ; |ZLYMQ|SHL~0       ; out              ;
+; |ZLYMQ|process_0~0 ; |ZLYMQ|process_0~0 ; out0             ;
+; |ZLYMQ|JZ~0        ; |ZLYMQ|JZ~0        ; out              ;
+; |ZLYMQ|JC~0        ; |ZLYMQ|JC~0        ; out              ;
+; |ZLYMQ|JC~1        ; |ZLYMQ|JC~1        ; out              ;
+; |ZLYMQ|MOVB~0      ; |ZLYMQ|MOVB~0      ; out              ;
+; |ZLYMQ|MOVC~1      ; |ZLYMQ|MOVC~1      ; out              ;
+; |ZLYMQ|MOVA~1      ; |ZLYMQ|MOVA~1      ; out              ;
+; |ZLYMQ|ADD~0       ; |ZLYMQ|ADD~0       ; out              ;
+; |ZLYMQ|SUB~0       ; |ZLYMQ|SUB~0       ; out              ;
+; |ZLYMQ|SUB~1       ; |ZLYMQ|SUB~1       ; out              ;
+; |ZLYMQ|AND1~0      ; |ZLYMQ|AND1~0      ; out              ;
+; |ZLYMQ|AND1~1      ; |ZLYMQ|AND1~1      ; out              ;
+; |ZLYMQ|AND1~2      ; |ZLYMQ|AND1~2      ; out              ;
+; |ZLYMQ|NOT1~0      ; |ZLYMQ|NOT1~0      ; out              ;
+; |ZLYMQ|NOT1~1      ; |ZLYMQ|NOT1~1      ; out              ;
+; |ZLYMQ|NOT1~2      ; |ZLYMQ|NOT1~2      ; out              ;
+; |ZLYMQ|NOT1~3      ; |ZLYMQ|NOT1~3      ; out              ;
+; |ZLYMQ|SHR~0       ; |ZLYMQ|SHR~0       ; out              ;
+; |ZLYMQ|SHR~1       ; |ZLYMQ|SHR~1       ; out              ;
+; |ZLYMQ|SHR~2       ; |ZLYMQ|SHR~2       ; out              ;
+; |ZLYMQ|SHR~3       ; |ZLYMQ|SHR~3       ; out              ;
+; |ZLYMQ|SHR~4       ; |ZLYMQ|SHR~4       ; out              ;
+; |ZLYMQ|SHR~5       ; |ZLYMQ|SHR~5       ; out              ;
+; |ZLYMQ|SHL~1       ; |ZLYMQ|SHL~1       ; out              ;
+; |ZLYMQ|SHL~2       ; |ZLYMQ|SHL~2       ; out              ;
+; |ZLYMQ|SHL~3       ; |ZLYMQ|SHL~3       ; out              ;
+; |ZLYMQ|SHL~4       ; |ZLYMQ|SHL~4       ; out              ;
+; |ZLYMQ|SHL~5       ; |ZLYMQ|SHL~5       ; out              ;
+; |ZLYMQ|SHL~6       ; |ZLYMQ|SHL~6       ; out              ;
+; |ZLYMQ|JMP~0       ; |ZLYMQ|JMP~0       ; out              ;
+; |ZLYMQ|JMP~1       ; |ZLYMQ|JMP~1       ; out              ;
+; |ZLYMQ|JMP~2       ; |ZLYMQ|JMP~2       ; out              ;
+; |ZLYMQ|JMP~3       ; |ZLYMQ|JMP~3       ; out              ;
+; |ZLYMQ|JMP~4       ; |ZLYMQ|JMP~4       ; out              ;
+; |ZLYMQ|JMP~5       ; |ZLYMQ|JMP~5       ; out              ;
+; |ZLYMQ|JMP~6       ; |ZLYMQ|JMP~6       ; out              ;
+; |ZLYMQ|JZ~1        ; |ZLYMQ|JZ~1        ; out              ;
+; |ZLYMQ|JZ~2        ; |ZLYMQ|JZ~2        ; out              ;
+; |ZLYMQ|JZ~3        ; |ZLYMQ|JZ~3        ; out              ;
+; |ZLYMQ|JZ~4        ; |ZLYMQ|JZ~4        ; out              ;
+; |ZLYMQ|JZ~5        ; |ZLYMQ|JZ~5        ; out              ;
+; |ZLYMQ|JZ~6        ; |ZLYMQ|JZ~6        ; out              ;
+; |ZLYMQ|JZ~7        ; |ZLYMQ|JZ~7        ; out              ;
+; |ZLYMQ|JC~2        ; |ZLYMQ|JC~2        ; out              ;
+; |ZLYMQ|JC~3        ; |ZLYMQ|JC~3        ; out              ;
+; |ZLYMQ|JC~4        ; |ZLYMQ|JC~4        ; out              ;
+; |ZLYMQ|JC~5        ; |ZLYMQ|JC~5        ; out              ;
+; |ZLYMQ|JC~6        ; |ZLYMQ|JC~6        ; out              ;
+; |ZLYMQ|JC~7        ; |ZLYMQ|JC~7        ; out              ;
+; |ZLYMQ|JC~8        ; |ZLYMQ|JC~8        ; out              ;
+; |ZLYMQ|IN1~0       ; |ZLYMQ|IN1~0       ; out              ;
+; |ZLYMQ|IN1~1       ; |ZLYMQ|IN1~1       ; out              ;
+; |ZLYMQ|IN1~2       ; |ZLYMQ|IN1~2       ; out              ;
+; |ZLYMQ|IN1~3       ; |ZLYMQ|IN1~3       ; out              ;
+; |ZLYMQ|IN1~4       ; |ZLYMQ|IN1~4       ; out              ;
+; |ZLYMQ|IN1~5       ; |ZLYMQ|IN1~5       ; out              ;
+; |ZLYMQ|IN1~6       ; |ZLYMQ|IN1~6       ; out              ;
+; |ZLYMQ|OUT1~0      ; |ZLYMQ|OUT1~0      ; out              ;
+; |ZLYMQ|OUT1~1      ; |ZLYMQ|OUT1~1      ; out              ;
+; |ZLYMQ|OUT1~2      ; |ZLYMQ|OUT1~2      ; out              ;
+; |ZLYMQ|OUT1~3      ; |ZLYMQ|OUT1~3      ; out              ;
+; |ZLYMQ|OUT1~4      ; |ZLYMQ|OUT1~4      ; out              ;
+; |ZLYMQ|OUT1~5      ; |ZLYMQ|OUT1~5      ; out              ;
+; |ZLYMQ|OUT1~6      ; |ZLYMQ|OUT1~6      ; out              ;
+; |ZLYMQ|OUT1~7      ; |ZLYMQ|OUT1~7      ; out              ;
+; |ZLYMQ|NOP~0       ; |ZLYMQ|NOP~0       ; out              ;
+; |ZLYMQ|NOP~1       ; |ZLYMQ|NOP~1       ; out              ;
+; |ZLYMQ|NOP~2       ; |ZLYMQ|NOP~2       ; out              ;
+; |ZLYMQ|NOP~3       ; |ZLYMQ|NOP~3       ; out              ;
+; |ZLYMQ|NOP~4       ; |ZLYMQ|NOP~4       ; out              ;
+; |ZLYMQ|NOP~5       ; |ZLYMQ|NOP~5       ; out              ;
+; |ZLYMQ|NOP~6       ; |ZLYMQ|NOP~6       ; out              ;
+; |ZLYMQ|NOP~7       ; |ZLYMQ|NOP~7       ; out              ;
+; |ZLYMQ|NOP~8       ; |ZLYMQ|NOP~8       ; out              ;
+; |ZLYMQ|HALT~0      ; |ZLYMQ|HALT~0      ; out              ;
+; |ZLYMQ|HALT~1      ; |ZLYMQ|HALT~1      ; out              ;
+; |ZLYMQ|HALT~2      ; |ZLYMQ|HALT~2      ; out              ;
+; |ZLYMQ|HALT~3      ; |ZLYMQ|HALT~3      ; out              ;
+; |ZLYMQ|HALT~4      ; |ZLYMQ|HALT~4      ; out              ;
+; |ZLYMQ|HALT~5      ; |ZLYMQ|HALT~5      ; out              ;
+; |ZLYMQ|HALT~6      ; |ZLYMQ|HALT~6      ; out              ;
+; |ZLYMQ|HALT~7      ; |ZLYMQ|HALT~7      ; out              ;
+; |ZLYMQ|HALT~8      ; |ZLYMQ|HALT~8      ; out              ;
+; |ZLYMQ|HALT~9      ; |ZLYMQ|HALT~9      ; out              ;
+; |ZLYMQ|MOVB~1      ; |ZLYMQ|MOVB~1      ; out              ;
+; |ZLYMQ|MOVC~2      ; |ZLYMQ|MOVC~2      ; out              ;
+; |ZLYMQ|MOVA~2      ; |ZLYMQ|MOVA~2      ; out              ;
+; |ZLYMQ|ADD~1       ; |ZLYMQ|ADD~1       ; out              ;
+; |ZLYMQ|SUB~2       ; |ZLYMQ|SUB~2       ; out              ;
+; |ZLYMQ|AND1~3      ; |ZLYMQ|AND1~3      ; out              ;
+; |ZLYMQ|NOT1~4      ; |ZLYMQ|NOT1~4      ; out              ;
+; |ZLYMQ|SHR~6       ; |ZLYMQ|SHR~6       ; out              ;
+; |ZLYMQ|SHL~7       ; |ZLYMQ|SHL~7       ; out              ;
+; |ZLYMQ|JMP~7       ; |ZLYMQ|JMP~7       ; out              ;
+; |ZLYMQ|JZ~8        ; |ZLYMQ|JZ~8        ; out              ;
+; |ZLYMQ|JC~9        ; |ZLYMQ|JC~9        ; out              ;
+; |ZLYMQ|IN1~7       ; |ZLYMQ|IN1~7       ; out              ;
+; |ZLYMQ|OUT1~8      ; |ZLYMQ|OUT1~8      ; out              ;
+; |ZLYMQ|NOP~9       ; |ZLYMQ|NOP~9       ; out              ;
+; |ZLYMQ|HALT~10     ; |ZLYMQ|HALT~10     ; out              ;
+; |ZLYMQ|SM          ; |ZLYMQ|SM          ; out              ;
+; |ZLYMQ|RWBA1       ; |ZLYMQ|RWBA1       ; out              ;
+; |ZLYMQ|RWBA0       ; |ZLYMQ|RWBA0       ; out              ;
+; |ZLYMQ|RAA1        ; |ZLYMQ|RAA1        ; out              ;
+; |ZLYMQ|RAA0        ; |ZLYMQ|RAA0        ; out              ;
+; |ZLYMQ|IR1[0]      ; |ZLYMQ|IR1[0]      ; out              ;
+; |ZLYMQ|IR1[1]      ; |ZLYMQ|IR1[1]      ; out              ;
+; |ZLYMQ|IR1[2]      ; |ZLYMQ|IR1[2]      ; out              ;
+; |ZLYMQ|IR1[3]      ; |ZLYMQ|IR1[3]      ; out              ;
+; |ZLYMQ|MOVA        ; |ZLYMQ|MOVA        ; pin_out          ;
+; |ZLYMQ|MOVB        ; |ZLYMQ|MOVB        ; pin_out          ;
+; |ZLYMQ|MOVC        ; |ZLYMQ|MOVC        ; pin_out          ;
+; |ZLYMQ|ADD         ; |ZLYMQ|ADD         ; pin_out          ;
+; |ZLYMQ|SUB         ; |ZLYMQ|SUB         ; pin_out          ;
+; |ZLYMQ|AND1        ; |ZLYMQ|AND1        ; pin_out          ;
+; |ZLYMQ|NOT1        ; |ZLYMQ|NOT1        ; pin_out          ;
+; |ZLYMQ|SHR         ; |ZLYMQ|SHR         ; pin_out          ;
+; |ZLYMQ|SHL         ; |ZLYMQ|SHL         ; pin_out          ;
+; |ZLYMQ|JMP         ; |ZLYMQ|JMP         ; pin_out          ;
+; |ZLYMQ|JZ          ; |ZLYMQ|JZ          ; pin_out          ;
+; |ZLYMQ|JC          ; |ZLYMQ|JC          ; pin_out          ;
+; |ZLYMQ|IN1         ; |ZLYMQ|IN1         ; pin_out          ;
+; |ZLYMQ|OUT1        ; |ZLYMQ|OUT1        ; pin_out          ;
+; |ZLYMQ|NOP         ; |ZLYMQ|NOP         ; pin_out          ;
+; |ZLYMQ|HALT        ; |ZLYMQ|HALT        ; pin_out          ;
+; |ZLYMQ|Equal0~0    ; |ZLYMQ|Equal0~0    ; out0             ;
+; |ZLYMQ|Equal1~0    ; |ZLYMQ|Equal1~0    ; out0             ;
+; |ZLYMQ|Equal2~0    ; |ZLYMQ|Equal2~0    ; out0             ;
+; |ZLYMQ|Equal3~0    ; |ZLYMQ|Equal3~0    ; out0             ;
+; |ZLYMQ|Equal4~0    ; |ZLYMQ|Equal4~0    ; out0             ;
+; |ZLYMQ|Equal5~0    ; |ZLYMQ|Equal5~0    ; out0             ;
+; |ZLYMQ|Equal6~0    ; |ZLYMQ|Equal6~0    ; out0             ;
+; |ZLYMQ|Equal7~0    ; |ZLYMQ|Equal7~0    ; out0             ;
+; |ZLYMQ|Equal8~0    ; |ZLYMQ|Equal8~0    ; out0             ;
+; |ZLYMQ|Equal9~0    ; |ZLYMQ|Equal9~0    ; out0             ;
+; |ZLYMQ|Equal10~0   ; |ZLYMQ|Equal10~0   ; out0             ;
+; |ZLYMQ|Equal11~0   ; |ZLYMQ|Equal11~0   ; out0             ;
+; |ZLYMQ|Equal12~0   ; |ZLYMQ|Equal12~0   ; out0             ;
+; |ZLYMQ|Equal13~0   ; |ZLYMQ|Equal13~0   ; out0             ;
+; |ZLYMQ|Equal14~0   ; |ZLYMQ|Equal14~0   ; out0             ;
+; |ZLYMQ|Equal15~0   ; |ZLYMQ|Equal15~0   ; out0             ;
+; |ZLYMQ|Equal16~0   ; |ZLYMQ|Equal16~0   ; out0             ;
++--------------------+--------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------+
+; Missing 1-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------+
+; Missing 0-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Jan 06 00:44:28 2018
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off ZLYMQ -c ZLYMQ
+Info: Using vector source file "E:/Quartus_two/cpu/÷∏¡Ó“Î¬Î∆˜/ZLYMQ.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is     100.00 %
+Info: Number of transitions in simulation is 10965
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 209 megabytes
+    Info: Processing ended: Sat Jan 06 00:44:28 2018
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

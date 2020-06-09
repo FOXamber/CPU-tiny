@@ -1,0 +1,823 @@
+Classic Timing Analyzer report for ALU
+Wed Jan 03 16:47:16 2018
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                       ;
++------------------------------+-------+---------------+-------------+-----------+-------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From      ; To    ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+-----------+-------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 4.678 ns    ; S[3]      ; ZZ[7] ; --         ; FBUS     ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 9.583 ns    ; ZZ[0]_199 ; Q[0]  ; S[0]       ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 1.065 ns    ; FRBUS     ; ZZ[6] ; --         ; S[0]     ; 0            ;
+; Total number of failed paths ;       ;               ;             ;           ;       ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+-----------+-------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP2S15F484C3       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; S[2]            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; S[1]            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; S[0]            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; S[3]            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; FBUS            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; FLBUS           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; FRBUS           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; M               ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                   ;
++-----------------------------------------+-----------------------------------------------------+------------+-------+-------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From  ; To    ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+-------+-------+----------+
+; N/A                                     ; None                                                ; 4.678 ns   ; S[3]  ; ZZ[7] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.649 ns   ; S[3]  ; ZZ[7] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.552 ns   ; S[2]  ; ZZ[7] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.523 ns   ; S[2]  ; ZZ[7] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.507 ns   ; S[3]  ; ZZ[7] ; FRBUS    ;
+; N/A                                     ; None                                                ; 4.505 ns   ; S[3]  ; ZZ[7] ; M        ;
+; N/A                                     ; None                                                ; 4.474 ns   ; S[3]  ; ZZ[7] ; S[2]     ;
+; N/A                                     ; None                                                ; 4.399 ns   ; S[3]  ; ZZ[7] ; S[1]     ;
+; N/A                                     ; None                                                ; 4.381 ns   ; S[2]  ; ZZ[7] ; FRBUS    ;
+; N/A                                     ; None                                                ; 4.379 ns   ; S[2]  ; ZZ[7] ; M        ;
+; N/A                                     ; None                                                ; 4.359 ns   ; M     ; ZZ[0] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.348 ns   ; S[2]  ; ZZ[7] ; S[2]     ;
+; N/A                                     ; None                                                ; 4.344 ns   ; M     ; ZZ[7] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.340 ns   ; FBUS  ; ZZ[7] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.330 ns   ; M     ; ZZ[0] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.315 ns   ; M     ; ZZ[7] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.313 ns   ; S[1]  ; ZZ[7] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.311 ns   ; FBUS  ; ZZ[7] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.302 ns   ; S[0]  ; ZZ[7] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.284 ns   ; S[1]  ; ZZ[7] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.273 ns   ; S[0]  ; ZZ[7] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.273 ns   ; S[2]  ; ZZ[7] ; S[1]     ;
+; N/A                                     ; None                                                ; 4.236 ns   ; M     ; ZZ[2] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.229 ns   ; S[3]  ; ZZ[7] ; S[3]     ;
+; N/A                                     ; None                                                ; 4.222 ns   ; S[3]  ; ZZ[7] ; S[0]     ;
+; N/A                                     ; None                                                ; 4.207 ns   ; M     ; ZZ[2] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.197 ns   ; R2[1] ; ZZ[2] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.196 ns   ; FBUS  ; ZZ[4] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.191 ns   ; S[3]  ; ZZ[4] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.188 ns   ; M     ; ZZ[0] ; FRBUS    ;
+; N/A                                     ; None                                                ; 4.186 ns   ; M     ; ZZ[0] ; M        ;
+; N/A                                     ; None                                                ; 4.173 ns   ; M     ; ZZ[7] ; FRBUS    ;
+; N/A                                     ; None                                                ; 4.171 ns   ; M     ; ZZ[7] ; M        ;
+; N/A                                     ; None                                                ; 4.171 ns   ; S[2]  ; ZZ[4] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.169 ns   ; FBUS  ; ZZ[7] ; FRBUS    ;
+; N/A                                     ; None                                                ; 4.168 ns   ; R2[1] ; ZZ[2] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.167 ns   ; FBUS  ; ZZ[7] ; M        ;
+; N/A                                     ; None                                                ; 4.167 ns   ; FBUS  ; ZZ[4] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.162 ns   ; S[3]  ; ZZ[4] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.155 ns   ; M     ; ZZ[0] ; S[2]     ;
+; N/A                                     ; None                                                ; 4.145 ns   ; S[1]  ; ZZ[4] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.142 ns   ; FBUS  ; ZZ[2] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.142 ns   ; S[1]  ; ZZ[7] ; FRBUS    ;
+; N/A                                     ; None                                                ; 4.142 ns   ; S[2]  ; ZZ[4] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.140 ns   ; M     ; ZZ[7] ; S[2]     ;
+; N/A                                     ; None                                                ; 4.140 ns   ; S[1]  ; ZZ[7] ; M        ;
+; N/A                                     ; None                                                ; 4.137 ns   ; S[3]  ; ZZ[2] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.136 ns   ; FBUS  ; ZZ[7] ; S[2]     ;
+; N/A                                     ; None                                                ; 4.131 ns   ; S[0]  ; ZZ[7] ; FRBUS    ;
+; N/A                                     ; None                                                ; 4.129 ns   ; S[0]  ; ZZ[7] ; M        ;
+; N/A                                     ; None                                                ; 4.117 ns   ; S[2]  ; ZZ[2] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.116 ns   ; S[1]  ; ZZ[4] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.113 ns   ; FBUS  ; ZZ[2] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.109 ns   ; S[1]  ; ZZ[7] ; S[2]     ;
+; N/A                                     ; None                                                ; 4.108 ns   ; S[3]  ; ZZ[2] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.103 ns   ; S[2]  ; ZZ[7] ; S[3]     ;
+; N/A                                     ; None                                                ; 4.101 ns   ; R1[3] ; ZZ[4] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.098 ns   ; S[0]  ; ZZ[7] ; S[2]     ;
+; N/A                                     ; None                                                ; 4.096 ns   ; S[2]  ; ZZ[7] ; S[0]     ;
+; N/A                                     ; None                                                ; 4.091 ns   ; S[1]  ; ZZ[2] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.088 ns   ; S[2]  ; ZZ[2] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.080 ns   ; M     ; ZZ[0] ; S[1]     ;
+; N/A                                     ; None                                                ; 4.072 ns   ; R1[3] ; ZZ[4] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.065 ns   ; M     ; ZZ[2] ; FRBUS    ;
+; N/A                                     ; None                                                ; 4.065 ns   ; M     ; ZZ[7] ; S[1]     ;
+; N/A                                     ; None                                                ; 4.063 ns   ; M     ; ZZ[2] ; M        ;
+; N/A                                     ; None                                                ; 4.062 ns   ; S[1]  ; ZZ[2] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.061 ns   ; FBUS  ; ZZ[7] ; S[1]     ;
+; N/A                                     ; None                                                ; 4.052 ns   ; R1[0] ; ZZ[2] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.037 ns   ; R1[2] ; ZZ[2] ; FBUS     ;
+; N/A                                     ; None                                                ; 4.034 ns   ; S[1]  ; ZZ[7] ; S[1]     ;
+; N/A                                     ; None                                                ; 4.032 ns   ; M     ; ZZ[2] ; S[2]     ;
+; N/A                                     ; None                                                ; 4.026 ns   ; R2[1] ; ZZ[2] ; FRBUS    ;
+; N/A                                     ; None                                                ; 4.025 ns   ; FBUS  ; ZZ[4] ; FRBUS    ;
+; N/A                                     ; None                                                ; 4.024 ns   ; R2[1] ; ZZ[2] ; M        ;
+; N/A                                     ; None                                                ; 4.023 ns   ; FBUS  ; ZZ[4] ; M        ;
+; N/A                                     ; None                                                ; 4.023 ns   ; S[0]  ; ZZ[7] ; S[1]     ;
+; N/A                                     ; None                                                ; 4.023 ns   ; R1[0] ; ZZ[2] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.020 ns   ; S[3]  ; ZZ[4] ; FRBUS    ;
+; N/A                                     ; None                                                ; 4.018 ns   ; S[3]  ; ZZ[4] ; M        ;
+; N/A                                     ; None                                                ; 4.008 ns   ; R1[2] ; ZZ[2] ; FLBUS    ;
+; N/A                                     ; None                                                ; 4.000 ns   ; S[2]  ; ZZ[4] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.998 ns   ; S[2]  ; ZZ[4] ; M        ;
+; N/A                                     ; None                                                ; 3.993 ns   ; R2[1] ; ZZ[2] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.992 ns   ; FBUS  ; ZZ[4] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.987 ns   ; S[3]  ; ZZ[4] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.974 ns   ; S[1]  ; ZZ[4] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.972 ns   ; S[1]  ; ZZ[4] ; M        ;
+; N/A                                     ; None                                                ; 3.971 ns   ; FBUS  ; ZZ[2] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.969 ns   ; FBUS  ; ZZ[2] ; M        ;
+; N/A                                     ; None                                                ; 3.967 ns   ; S[2]  ; ZZ[4] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.967 ns   ; R2[2] ; ZZ[2] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.966 ns   ; S[3]  ; ZZ[2] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.964 ns   ; S[3]  ; ZZ[2] ; M        ;
+; N/A                                     ; None                                                ; 3.960 ns   ; R2[0] ; ZZ[2] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.957 ns   ; M     ; ZZ[2] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.946 ns   ; S[2]  ; ZZ[2] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.944 ns   ; S[2]  ; ZZ[2] ; M        ;
+; N/A                                     ; None                                                ; 3.941 ns   ; S[1]  ; ZZ[4] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.941 ns   ; R1[3] ; ZZ[5] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.938 ns   ; FBUS  ; ZZ[2] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.938 ns   ; R2[2] ; ZZ[2] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.933 ns   ; S[3]  ; ZZ[2] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.931 ns   ; R2[0] ; ZZ[2] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.930 ns   ; S[0]  ; ZZ[4] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.930 ns   ; R1[3] ; ZZ[4] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.928 ns   ; R1[3] ; ZZ[4] ; M        ;
+; N/A                                     ; None                                                ; 3.926 ns   ; R1[1] ; ZZ[2] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.926 ns   ; R2[1] ; ZZ[5] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.920 ns   ; S[1]  ; ZZ[2] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.918 ns   ; S[1]  ; ZZ[2] ; M        ;
+; N/A                                     ; None                                                ; 3.918 ns   ; R2[1] ; ZZ[2] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.917 ns   ; FBUS  ; ZZ[4] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.913 ns   ; S[2]  ; ZZ[2] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.912 ns   ; S[3]  ; ZZ[4] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.912 ns   ; R1[3] ; ZZ[5] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.910 ns   ; M     ; ZZ[0] ; S[3]     ;
+; N/A                                     ; None                                                ; 3.907 ns   ; M     ; ZZ[4] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.903 ns   ; M     ; ZZ[0] ; S[0]     ;
+; N/A                                     ; None                                                ; 3.901 ns   ; S[0]  ; ZZ[4] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.897 ns   ; R1[3] ; ZZ[4] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.897 ns   ; R1[1] ; ZZ[2] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.897 ns   ; R2[1] ; ZZ[5] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.895 ns   ; M     ; ZZ[7] ; S[3]     ;
+; N/A                                     ; None                                                ; 3.892 ns   ; S[2]  ; ZZ[4] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.891 ns   ; FBUS  ; ZZ[7] ; S[3]     ;
+; N/A                                     ; None                                                ; 3.888 ns   ; M     ; ZZ[7] ; S[0]     ;
+; N/A                                     ; None                                                ; 3.887 ns   ; S[1]  ; ZZ[2] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.884 ns   ; FBUS  ; ZZ[7] ; S[0]     ;
+; N/A                                     ; None                                                ; 3.881 ns   ; R1[0] ; ZZ[2] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.879 ns   ; R1[0] ; ZZ[2] ; M        ;
+; N/A                                     ; None                                                ; 3.878 ns   ; M     ; ZZ[4] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.876 ns   ; S[0]  ; ZZ[2] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.870 ns   ; R2[2] ; ZZ[5] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.866 ns   ; S[1]  ; ZZ[4] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.866 ns   ; R1[2] ; ZZ[2] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.864 ns   ; S[1]  ; ZZ[7] ; S[3]     ;
+; N/A                                     ; None                                                ; 3.864 ns   ; R1[2] ; ZZ[2] ; M        ;
+; N/A                                     ; None                                                ; 3.863 ns   ; FBUS  ; ZZ[2] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.858 ns   ; S[3]  ; ZZ[2] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.857 ns   ; S[1]  ; ZZ[7] ; S[0]     ;
+; N/A                                     ; None                                                ; 3.853 ns   ; S[0]  ; ZZ[7] ; S[3]     ;
+; N/A                                     ; None                                                ; 3.848 ns   ; R1[0] ; ZZ[2] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.847 ns   ; S[0]  ; ZZ[2] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.846 ns   ; S[0]  ; ZZ[7] ; S[0]     ;
+; N/A                                     ; None                                                ; 3.846 ns   ; R1[1] ; ZZ[0] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.842 ns   ; R1[5] ; ZZ[4] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.841 ns   ; R2[2] ; ZZ[5] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.838 ns   ; FBUS  ; ZZ[0] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.838 ns   ; S[2]  ; ZZ[2] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.833 ns   ; R1[2] ; ZZ[2] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.822 ns   ; R1[3] ; ZZ[4] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.817 ns   ; S[3]  ; ZZ[0] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.817 ns   ; R1[1] ; ZZ[0] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.814 ns   ; R2[1] ; ZZ[4] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.813 ns   ; R1[5] ; ZZ[4] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.812 ns   ; S[1]  ; ZZ[2] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.809 ns   ; FBUS  ; ZZ[0] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.806 ns   ; FBUS  ; ZZ[1] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.805 ns   ; R1[0] ; ZZ[1] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.802 ns   ; S[2]  ; ZZ[0] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.801 ns   ; S[3]  ; ZZ[1] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.798 ns   ; R1[0] ; ZZ[5] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.796 ns   ; R2[2] ; ZZ[2] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.794 ns   ; R2[2] ; ZZ[2] ; M        ;
+; N/A                                     ; None                                                ; 3.789 ns   ; R2[0] ; ZZ[2] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.788 ns   ; S[3]  ; ZZ[0] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.787 ns   ; M     ; ZZ[2] ; S[3]     ;
+; N/A                                     ; None                                                ; 3.787 ns   ; R2[0] ; ZZ[2] ; M        ;
+; N/A                                     ; None                                                ; 3.785 ns   ; R2[1] ; ZZ[4] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.782 ns   ; R1[0] ; ZZ[0] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.781 ns   ; S[2]  ; ZZ[1] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.780 ns   ; M     ; ZZ[2] ; S[0]     ;
+; N/A                                     ; None                                                ; 3.777 ns   ; FBUS  ; ZZ[1] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.777 ns   ; FBUS  ; ZZ[6] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.776 ns   ; R1[0] ; ZZ[1] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.773 ns   ; S[2]  ; ZZ[0] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.773 ns   ; R1[0] ; ZZ[2] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.772 ns   ; S[3]  ; ZZ[1] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.772 ns   ; S[3]  ; ZZ[6] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.771 ns   ; S[1]  ; ZZ[0] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.771 ns   ; R1[3] ; ZZ[7] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.770 ns   ; R1[3] ; ZZ[5] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.769 ns   ; R1[0] ; ZZ[5] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.768 ns   ; R1[3] ; ZZ[5] ; M        ;
+; N/A                                     ; None                                                ; 3.763 ns   ; R2[2] ; ZZ[2] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.759 ns   ; S[0]  ; ZZ[4] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.759 ns   ; R1[5] ; ZZ[5] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.758 ns   ; R1[2] ; ZZ[2] ; S[1]     ;
+; N/A                                     ; None                                                ; 3.757 ns   ; S[0]  ; ZZ[4] ; M        ;
+; N/A                                     ; None                                                ; 3.756 ns   ; R2[1] ; ZZ[7] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.756 ns   ; R2[0] ; ZZ[2] ; S[2]     ;
+; N/A                                     ; None                                                ; 3.755 ns   ; S[1]  ; ZZ[1] ; FBUS     ;
+; N/A                                     ; None                                                ; 3.755 ns   ; R1[1] ; ZZ[2] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.755 ns   ; R2[1] ; ZZ[5] ; FRBUS    ;
+; N/A                                     ; None                                                ; 3.753 ns   ; R1[1] ; ZZ[2] ; M        ;
+; N/A                                     ; None                                                ; 3.753 ns   ; R2[1] ; ZZ[5] ; M        ;
+; N/A                                     ; None                                                ; 3.753 ns   ; R1[0] ; ZZ[0] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.752 ns   ; S[2]  ; ZZ[1] ; FLBUS    ;
+; N/A                                     ; None                                                ; 3.752 ns   ; S[2]  ; ZZ[6] ; FBUS     ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;       ;       ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+-------+-------+----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                        ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------+------+------------+
+; Slack                                   ; Required tco                                        ; Actual tco ; From      ; To   ; From Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------+------+------------+
+; N/A                                     ; None                                                ; 9.583 ns   ; ZZ[0]_199 ; Q[0] ; S[0]       ;
+; N/A                                     ; None                                                ; 9.576 ns   ; ZZ[0]_199 ; Q[0] ; S[3]       ;
+; N/A                                     ; None                                                ; 9.406 ns   ; ZZ[0]_199 ; Q[0] ; S[1]       ;
+; N/A                                     ; None                                                ; 9.331 ns   ; ZZ[0]_199 ; Q[0] ; S[2]       ;
+; N/A                                     ; None                                                ; 9.300 ns   ; ZZ[0]_199 ; Q[0] ; M          ;
+; N/A                                     ; None                                                ; 9.299 ns   ; ZZ[0]_199 ; Q[4] ; S[0]       ;
+; N/A                                     ; None                                                ; 9.298 ns   ; ZZ[0]_199 ; Q[0] ; FRBUS      ;
+; N/A                                     ; None                                                ; 9.292 ns   ; ZZ[0]_199 ; Q[4] ; S[3]       ;
+; N/A                                     ; None                                                ; 9.207 ns   ; ZZ[0]_199 ; Q[3] ; S[0]       ;
+; N/A                                     ; None                                                ; 9.202 ns   ; ZZ[0]_199 ; Q[7] ; S[0]       ;
+; N/A                                     ; None                                                ; 9.200 ns   ; ZZ[0]_199 ; Q[3] ; S[3]       ;
+; N/A                                     ; None                                                ; 9.195 ns   ; ZZ[0]_199 ; Q[7] ; S[3]       ;
+; N/A                                     ; None                                                ; 9.156 ns   ; ZZ[0]_199 ; Q[0] ; FLBUS      ;
+; N/A                                     ; None                                                ; 9.127 ns   ; ZZ[0]_199 ; Q[0] ; FBUS       ;
+; N/A                                     ; None                                                ; 9.122 ns   ; ZZ[0]_199 ; Q[4] ; S[1]       ;
+; N/A                                     ; None                                                ; 9.104 ns   ; ZZ[1]     ; Z    ; S[0]       ;
+; N/A                                     ; None                                                ; 9.097 ns   ; ZZ[1]     ; Z    ; S[3]       ;
+; N/A                                     ; None                                                ; 9.047 ns   ; ZZ[0]_199 ; Q[5] ; S[0]       ;
+; N/A                                     ; None                                                ; 9.047 ns   ; ZZ[0]_199 ; Q[4] ; S[2]       ;
+; N/A                                     ; None                                                ; 9.040 ns   ; ZZ[0]_199 ; Q[5] ; S[3]       ;
+; N/A                                     ; None                                                ; 9.030 ns   ; ZZ[0]_199 ; Q[3] ; S[1]       ;
+; N/A                                     ; None                                                ; 9.025 ns   ; ZZ[0]_199 ; Q[7] ; S[1]       ;
+; N/A                                     ; None                                                ; 9.016 ns   ; ZZ[0]_199 ; Q[4] ; M          ;
+; N/A                                     ; None                                                ; 9.014 ns   ; ZZ[0]_199 ; Q[4] ; FRBUS      ;
+; N/A                                     ; None                                                ; 9.012 ns   ; ZZ[0]_199 ; Z    ; S[0]       ;
+; N/A                                     ; None                                                ; 9.010 ns   ; ZZ[5]     ; Z    ; S[0]       ;
+; N/A                                     ; None                                                ; 9.005 ns   ; ZZ[0]_199 ; Z    ; S[3]       ;
+; N/A                                     ; None                                                ; 9.003 ns   ; ZZ[5]     ; Z    ; S[3]       ;
+; N/A                                     ; None                                                ; 8.955 ns   ; ZZ[0]_199 ; Q[3] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.950 ns   ; ZZ[0]_199 ; Q[7] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.940 ns   ; ZZ[2]     ; Z    ; S[0]       ;
+; N/A                                     ; None                                                ; 8.933 ns   ; ZZ[2]     ; Z    ; S[3]       ;
+; N/A                                     ; None                                                ; 8.931 ns   ; ZZ[3]     ; Q[3] ; S[0]       ;
+; N/A                                     ; None                                                ; 8.927 ns   ; ZZ[1]     ; Z    ; S[1]       ;
+; N/A                                     ; None                                                ; 8.924 ns   ; ZZ[0]_199 ; Q[3] ; M          ;
+; N/A                                     ; None                                                ; 8.924 ns   ; ZZ[3]     ; Q[3] ; S[3]       ;
+; N/A                                     ; None                                                ; 8.922 ns   ; ZZ[0]_199 ; Q[3] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.919 ns   ; ZZ[0]_199 ; Q[7] ; M          ;
+; N/A                                     ; None                                                ; 8.917 ns   ; ZZ[0]_199 ; Q[7] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.879 ns   ; ZZ[7]     ; Z    ; S[0]       ;
+; N/A                                     ; None                                                ; 8.872 ns   ; ZZ[7]     ; Z    ; S[3]       ;
+; N/A                                     ; None                                                ; 8.872 ns   ; ZZ[0]_199 ; Q[4] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.870 ns   ; ZZ[0]_199 ; Q[5] ; S[1]       ;
+; N/A                                     ; None                                                ; 8.863 ns   ; ZZ[6]     ; Q[6] ; S[0]       ;
+; N/A                                     ; None                                                ; 8.857 ns   ; ZZ[0]_199 ; Q[6] ; S[0]       ;
+; N/A                                     ; None                                                ; 8.856 ns   ; ZZ[6]     ; Q[6] ; S[3]       ;
+; N/A                                     ; None                                                ; 8.852 ns   ; ZZ[1]     ; Z    ; S[2]       ;
+; N/A                                     ; None                                                ; 8.850 ns   ; ZZ[0]_199 ; Q[6] ; S[3]       ;
+; N/A                                     ; None                                                ; 8.844 ns   ; ZZ[7]     ; Q[7] ; S[0]       ;
+; N/A                                     ; None                                                ; 8.843 ns   ; ZZ[0]_199 ; Q[4] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.842 ns   ; ZZ[0]     ; Z    ; S[0]       ;
+; N/A                                     ; None                                                ; 8.837 ns   ; ZZ[7]     ; Q[7] ; S[3]       ;
+; N/A                                     ; None                                                ; 8.835 ns   ; ZZ[0]     ; Z    ; S[3]       ;
+; N/A                                     ; None                                                ; 8.835 ns   ; ZZ[0]_199 ; Z    ; S[1]       ;
+; N/A                                     ; None                                                ; 8.833 ns   ; ZZ[5]     ; Z    ; S[1]       ;
+; N/A                                     ; None                                                ; 8.821 ns   ; ZZ[1]     ; Z    ; M          ;
+; N/A                                     ; None                                                ; 8.819 ns   ; ZZ[1]     ; Z    ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.800 ns   ; ZZ[0]_199 ; Q[2] ; S[0]       ;
+; N/A                                     ; None                                                ; 8.795 ns   ; ZZ[0]_199 ; Q[5] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.793 ns   ; ZZ[0]_199 ; Q[2] ; S[3]       ;
+; N/A                                     ; None                                                ; 8.780 ns   ; ZZ[0]_199 ; Q[3] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.775 ns   ; ZZ[0]_199 ; Q[7] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.770 ns   ; ZZ[0]_199 ; Q[1] ; S[0]       ;
+; N/A                                     ; None                                                ; 8.764 ns   ; ZZ[0]_199 ; Q[5] ; M          ;
+; N/A                                     ; None                                                ; 8.763 ns   ; ZZ[2]     ; Z    ; S[1]       ;
+; N/A                                     ; None                                                ; 8.763 ns   ; ZZ[0]_199 ; Q[1] ; S[3]       ;
+; N/A                                     ; None                                                ; 8.762 ns   ; ZZ[0]_199 ; Q[5] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.760 ns   ; ZZ[0]_199 ; Z    ; S[2]       ;
+; N/A                                     ; None                                                ; 8.758 ns   ; ZZ[5]     ; Z    ; S[2]       ;
+; N/A                                     ; None                                                ; 8.754 ns   ; ZZ[3]     ; Q[3] ; S[1]       ;
+; N/A                                     ; None                                                ; 8.751 ns   ; ZZ[0]_199 ; Q[3] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.746 ns   ; ZZ[0]_199 ; Q[7] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.729 ns   ; ZZ[0]_199 ; Z    ; M          ;
+; N/A                                     ; None                                                ; 8.727 ns   ; ZZ[5]     ; Z    ; M          ;
+; N/A                                     ; None                                                ; 8.727 ns   ; ZZ[0]_199 ; Z    ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.725 ns   ; ZZ[5]     ; Z    ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.725 ns   ; ZZ[5]     ; Q[5] ; S[0]       ;
+; N/A                                     ; None                                                ; 8.718 ns   ; ZZ[5]     ; Q[5] ; S[3]       ;
+; N/A                                     ; None                                                ; 8.702 ns   ; ZZ[7]     ; Z    ; S[1]       ;
+; N/A                                     ; None                                                ; 8.689 ns   ; ZZ[2]     ; Q[2] ; S[0]       ;
+; N/A                                     ; None                                                ; 8.688 ns   ; ZZ[2]     ; Z    ; S[2]       ;
+; N/A                                     ; None                                                ; 8.686 ns   ; ZZ[6]     ; Q[6] ; S[1]       ;
+; N/A                                     ; None                                                ; 8.682 ns   ; ZZ[2]     ; Q[2] ; S[3]       ;
+; N/A                                     ; None                                                ; 8.680 ns   ; ZZ[0]_199 ; Q[6] ; S[1]       ;
+; N/A                                     ; None                                                ; 8.679 ns   ; ZZ[3]     ; Q[3] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.677 ns   ; ZZ[1]     ; Z    ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.673 ns   ; ZZ[4]     ; Z    ; S[0]       ;
+; N/A                                     ; None                                                ; 8.667 ns   ; ZZ[7]     ; Q[7] ; S[1]       ;
+; N/A                                     ; None                                                ; 8.666 ns   ; ZZ[4]     ; Z    ; S[3]       ;
+; N/A                                     ; None                                                ; 8.665 ns   ; ZZ[0]     ; Z    ; S[1]       ;
+; N/A                                     ; None                                                ; 8.663 ns   ; ZZ[3]     ; Z    ; S[0]       ;
+; N/A                                     ; None                                                ; 8.657 ns   ; ZZ[2]     ; Z    ; M          ;
+; N/A                                     ; None                                                ; 8.656 ns   ; ZZ[3]     ; Z    ; S[3]       ;
+; N/A                                     ; None                                                ; 8.655 ns   ; ZZ[2]     ; Z    ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.652 ns   ; ZZ[4]     ; Q[4] ; S[0]       ;
+; N/A                                     ; None                                                ; 8.648 ns   ; ZZ[1]     ; Z    ; FBUS       ;
+; N/A                                     ; None                                                ; 8.648 ns   ; ZZ[3]     ; Q[3] ; M          ;
+; N/A                                     ; None                                                ; 8.646 ns   ; ZZ[3]     ; Q[3] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.645 ns   ; ZZ[4]     ; Q[4] ; S[3]       ;
+; N/A                                     ; None                                                ; 8.642 ns   ; ZZ[1]     ; Q[1] ; S[0]       ;
+; N/A                                     ; None                                                ; 8.635 ns   ; ZZ[1]     ; Q[1] ; S[3]       ;
+; N/A                                     ; None                                                ; 8.627 ns   ; ZZ[7]     ; Z    ; S[2]       ;
+; N/A                                     ; None                                                ; 8.623 ns   ; ZZ[0]_199 ; Q[2] ; S[1]       ;
+; N/A                                     ; None                                                ; 8.621 ns   ; ZZ[0]     ; Q[0] ; S[0]       ;
+; N/A                                     ; None                                                ; 8.620 ns   ; ZZ[0]_199 ; Q[5] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.614 ns   ; ZZ[0]     ; Q[0] ; S[3]       ;
+; N/A                                     ; None                                                ; 8.611 ns   ; ZZ[6]     ; Q[6] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.605 ns   ; ZZ[0]_199 ; Q[6] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.596 ns   ; ZZ[7]     ; Z    ; M          ;
+; N/A                                     ; None                                                ; 8.594 ns   ; ZZ[7]     ; Z    ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.593 ns   ; ZZ[0]_199 ; Q[1] ; S[1]       ;
+; N/A                                     ; None                                                ; 8.592 ns   ; ZZ[7]     ; Q[7] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.591 ns   ; ZZ[0]_199 ; Q[5] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.590 ns   ; ZZ[0]     ; Z    ; S[2]       ;
+; N/A                                     ; None                                                ; 8.585 ns   ; ZZ[0]_199 ; Z    ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.583 ns   ; ZZ[5]     ; Z    ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.580 ns   ; ZZ[6]     ; Q[6] ; M          ;
+; N/A                                     ; None                                                ; 8.578 ns   ; ZZ[6]     ; Q[6] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.574 ns   ; ZZ[0]_199 ; Q[6] ; M          ;
+; N/A                                     ; None                                                ; 8.572 ns   ; ZZ[0]_199 ; Q[6] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.561 ns   ; ZZ[7]     ; Q[7] ; M          ;
+; N/A                                     ; None                                                ; 8.559 ns   ; ZZ[0]     ; Z    ; M          ;
+; N/A                                     ; None                                                ; 8.559 ns   ; ZZ[7]     ; Q[7] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.557 ns   ; ZZ[0]     ; Z    ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.556 ns   ; ZZ[0]_199 ; Z    ; FBUS       ;
+; N/A                                     ; None                                                ; 8.554 ns   ; ZZ[5]     ; Z    ; FBUS       ;
+; N/A                                     ; None                                                ; 8.548 ns   ; ZZ[5]     ; Q[5] ; S[1]       ;
+; N/A                                     ; None                                                ; 8.548 ns   ; ZZ[0]_199 ; Q[2] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.518 ns   ; ZZ[0]_199 ; Q[1] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.517 ns   ; ZZ[0]_199 ; Q[2] ; M          ;
+; N/A                                     ; None                                                ; 8.515 ns   ; ZZ[0]_199 ; Q[2] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.513 ns   ; ZZ[2]     ; Z    ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.512 ns   ; ZZ[2]     ; Q[2] ; S[1]       ;
+; N/A                                     ; None                                                ; 8.504 ns   ; ZZ[3]     ; Q[3] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.496 ns   ; ZZ[4]     ; Z    ; S[1]       ;
+; N/A                                     ; None                                                ; 8.487 ns   ; ZZ[0]_199 ; Q[1] ; M          ;
+; N/A                                     ; None                                                ; 8.486 ns   ; ZZ[3]     ; Z    ; S[1]       ;
+; N/A                                     ; None                                                ; 8.485 ns   ; ZZ[0]_199 ; Q[1] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.484 ns   ; ZZ[2]     ; Z    ; FBUS       ;
+; N/A                                     ; None                                                ; 8.478 ns   ; ZZ[6]     ; Z    ; S[0]       ;
+; N/A                                     ; None                                                ; 8.475 ns   ; ZZ[4]     ; Q[4] ; S[1]       ;
+; N/A                                     ; None                                                ; 8.475 ns   ; ZZ[3]     ; Q[3] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.473 ns   ; ZZ[5]     ; Q[5] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.471 ns   ; ZZ[6]     ; Z    ; S[3]       ;
+; N/A                                     ; None                                                ; 8.465 ns   ; ZZ[1]     ; Q[1] ; S[1]       ;
+; N/A                                     ; None                                                ; 8.452 ns   ; ZZ[7]     ; Z    ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.444 ns   ; ZZ[0]     ; Q[0] ; S[1]       ;
+; N/A                                     ; None                                                ; 8.442 ns   ; ZZ[5]     ; Q[5] ; M          ;
+; N/A                                     ; None                                                ; 8.440 ns   ; ZZ[5]     ; Q[5] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.437 ns   ; ZZ[2]     ; Q[2] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.436 ns   ; ZZ[6]     ; Q[6] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.430 ns   ; ZZ[0]_199 ; Q[6] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.423 ns   ; ZZ[7]     ; Z    ; FBUS       ;
+; N/A                                     ; None                                                ; 8.421 ns   ; ZZ[4]     ; Z    ; S[2]       ;
+; N/A                                     ; None                                                ; 8.417 ns   ; ZZ[7]     ; Q[7] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.415 ns   ; ZZ[0]     ; Z    ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.411 ns   ; ZZ[3]     ; Z    ; S[2]       ;
+; N/A                                     ; None                                                ; 8.407 ns   ; ZZ[6]     ; Q[6] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.406 ns   ; ZZ[2]     ; Q[2] ; M          ;
+; N/A                                     ; None                                                ; 8.404 ns   ; ZZ[2]     ; Q[2] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.401 ns   ; ZZ[0]_199 ; Q[6] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.400 ns   ; ZZ[4]     ; Q[4] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.390 ns   ; ZZ[4]     ; Z    ; M          ;
+; N/A                                     ; None                                                ; 8.390 ns   ; ZZ[1]     ; Q[1] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.388 ns   ; ZZ[4]     ; Z    ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.388 ns   ; ZZ[7]     ; Q[7] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.386 ns   ; ZZ[0]     ; Z    ; FBUS       ;
+; N/A                                     ; None                                                ; 8.380 ns   ; ZZ[3]     ; Z    ; M          ;
+; N/A                                     ; None                                                ; 8.378 ns   ; ZZ[3]     ; Z    ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.373 ns   ; ZZ[0]_199 ; Q[2] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.369 ns   ; ZZ[4]     ; Q[4] ; M          ;
+; N/A                                     ; None                                                ; 8.369 ns   ; ZZ[0]     ; Q[0] ; S[2]       ;
+; N/A                                     ; None                                                ; 8.367 ns   ; ZZ[4]     ; Q[4] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.359 ns   ; ZZ[1]     ; Q[1] ; M          ;
+; N/A                                     ; None                                                ; 8.357 ns   ; ZZ[1]     ; Q[1] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.344 ns   ; ZZ[0]_199 ; Q[2] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.343 ns   ; ZZ[0]_199 ; Q[1] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.338 ns   ; ZZ[0]     ; Q[0] ; M          ;
+; N/A                                     ; None                                                ; 8.336 ns   ; ZZ[0]     ; Q[0] ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.314 ns   ; ZZ[0]_199 ; Q[1] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.301 ns   ; ZZ[6]     ; Z    ; S[1]       ;
+; N/A                                     ; None                                                ; 8.298 ns   ; ZZ[5]     ; Q[5] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.269 ns   ; ZZ[5]     ; Q[5] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.262 ns   ; ZZ[2]     ; Q[2] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.246 ns   ; ZZ[4]     ; Z    ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.236 ns   ; ZZ[3]     ; Z    ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.233 ns   ; ZZ[2]     ; Q[2] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.226 ns   ; ZZ[6]     ; Z    ; S[2]       ;
+; N/A                                     ; None                                                ; 8.225 ns   ; ZZ[4]     ; Q[4] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.217 ns   ; ZZ[4]     ; Z    ; FBUS       ;
+; N/A                                     ; None                                                ; 8.215 ns   ; ZZ[1]     ; Q[1] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.207 ns   ; ZZ[3]     ; Z    ; FBUS       ;
+; N/A                                     ; None                                                ; 8.196 ns   ; ZZ[4]     ; Q[4] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.195 ns   ; ZZ[6]     ; Z    ; M          ;
+; N/A                                     ; None                                                ; 8.194 ns   ; ZZ[0]     ; Q[0] ; FLBUS      ;
+; N/A                                     ; None                                                ; 8.193 ns   ; ZZ[6]     ; Z    ; FRBUS      ;
+; N/A                                     ; None                                                ; 8.186 ns   ; ZZ[1]     ; Q[1] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.165 ns   ; ZZ[0]     ; Q[0] ; FBUS       ;
+; N/A                                     ; None                                                ; 8.056 ns   ; ZZ[8]     ; C    ; S[0]       ;
+; N/A                                     ; None                                                ; 8.051 ns   ; ZZ[6]     ; Z    ; FLBUS      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;           ;      ;            ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------+------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                       ;
++-----------------------------------------+-----------------------------------------------------+-----------+-------+-----------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From  ; To        ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+-------+-----------+----------+
+; N/A                                     ; None                                                ; 1.065 ns  ; FRBUS ; ZZ[6]     ; S[0]     ;
+; N/A                                     ; None                                                ; 1.063 ns  ; M     ; ZZ[6]     ; S[0]     ;
+; N/A                                     ; None                                                ; 1.058 ns  ; FRBUS ; ZZ[6]     ; S[3]     ;
+; N/A                                     ; None                                                ; 1.056 ns  ; M     ; ZZ[6]     ; S[3]     ;
+; N/A                                     ; None                                                ; 0.888 ns  ; FRBUS ; ZZ[6]     ; S[1]     ;
+; N/A                                     ; None                                                ; 0.886 ns  ; M     ; ZZ[6]     ; S[1]     ;
+; N/A                                     ; None                                                ; 0.813 ns  ; FRBUS ; ZZ[6]     ; S[2]     ;
+; N/A                                     ; None                                                ; 0.811 ns  ; M     ; ZZ[6]     ; S[2]     ;
+; N/A                                     ; None                                                ; 0.782 ns  ; FRBUS ; ZZ[6]     ; M        ;
+; N/A                                     ; None                                                ; 0.780 ns  ; M     ; ZZ[6]     ; M        ;
+; N/A                                     ; None                                                ; 0.780 ns  ; FRBUS ; ZZ[6]     ; FRBUS    ;
+; N/A                                     ; None                                                ; 0.778 ns  ; M     ; ZZ[6]     ; FRBUS    ;
+; N/A                                     ; None                                                ; 0.638 ns  ; FRBUS ; ZZ[6]     ; FLBUS    ;
+; N/A                                     ; None                                                ; 0.636 ns  ; M     ; ZZ[6]     ; FLBUS    ;
+; N/A                                     ; None                                                ; 0.609 ns  ; FRBUS ; ZZ[6]     ; FBUS     ;
+; N/A                                     ; None                                                ; 0.607 ns  ; M     ; ZZ[6]     ; FBUS     ;
+; N/A                                     ; None                                                ; -0.910 ns ; R1[4] ; ZZ[4]     ; S[0]     ;
+; N/A                                     ; None                                                ; -0.917 ns ; R1[4] ; ZZ[4]     ; S[3]     ;
+; N/A                                     ; None                                                ; -0.921 ns ; R2[5] ; ZZ[5]     ; S[0]     ;
+; N/A                                     ; None                                                ; -0.928 ns ; R2[5] ; ZZ[5]     ; S[3]     ;
+; N/A                                     ; None                                                ; -0.989 ns ; R1[7] ; ZZ[8]     ; S[0]     ;
+; N/A                                     ; None                                                ; -0.996 ns ; R1[7] ; ZZ[8]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.087 ns ; R1[4] ; ZZ[4]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.098 ns ; R2[5] ; ZZ[5]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.110 ns ; M     ; ZZ[0]_199 ; S[0]     ;
+; N/A                                     ; None                                                ; -1.115 ns ; S[0]  ; ZZ[0]_199 ; S[0]     ;
+; N/A                                     ; None                                                ; -1.117 ns ; M     ; ZZ[0]_199 ; S[3]     ;
+; N/A                                     ; None                                                ; -1.122 ns ; S[0]  ; ZZ[0]_199 ; S[3]     ;
+; N/A                                     ; None                                                ; -1.162 ns ; R1[4] ; ZZ[4]     ; S[2]     ;
+; N/A                                     ; None                                                ; -1.166 ns ; R1[7] ; ZZ[8]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.173 ns ; R2[5] ; ZZ[5]     ; S[2]     ;
+; N/A                                     ; None                                                ; -1.193 ns ; R1[4] ; ZZ[4]     ; M        ;
+; N/A                                     ; None                                                ; -1.195 ns ; R1[4] ; ZZ[4]     ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.204 ns ; R2[5] ; ZZ[5]     ; M        ;
+; N/A                                     ; None                                                ; -1.206 ns ; R2[5] ; ZZ[5]     ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.241 ns ; R1[7] ; ZZ[8]     ; S[2]     ;
+; N/A                                     ; None                                                ; -1.272 ns ; R1[7] ; ZZ[8]     ; M        ;
+; N/A                                     ; None                                                ; -1.274 ns ; R1[7] ; ZZ[8]     ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.287 ns ; M     ; ZZ[0]_199 ; S[1]     ;
+; N/A                                     ; None                                                ; -1.292 ns ; FBUS  ; ZZ[0]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.292 ns ; S[0]  ; ZZ[0]_199 ; S[1]     ;
+; N/A                                     ; None                                                ; -1.299 ns ; FBUS  ; ZZ[0]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.311 ns ; R2[6] ; ZZ[6]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.314 ns ; R2[3] ; ZZ[3]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.318 ns ; R2[6] ; ZZ[6]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.321 ns ; R2[3] ; ZZ[3]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.328 ns ; S[1]  ; ZZ[0]_199 ; S[0]     ;
+; N/A                                     ; None                                                ; -1.335 ns ; S[1]  ; ZZ[0]_199 ; S[3]     ;
+; N/A                                     ; None                                                ; -1.335 ns ; R1[0] ; ZZ[8]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.337 ns ; R1[4] ; ZZ[4]     ; FLBUS    ;
+; N/A                                     ; None                                                ; -1.342 ns ; R1[0] ; ZZ[8]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.348 ns ; R2[5] ; ZZ[5]     ; FLBUS    ;
+; N/A                                     ; None                                                ; -1.356 ns ; FRBUS ; ZZ[0]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.362 ns ; M     ; ZZ[0]_199 ; S[2]     ;
+; N/A                                     ; None                                                ; -1.363 ns ; FRBUS ; ZZ[0]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.366 ns ; R1[4] ; ZZ[4]     ; FBUS     ;
+; N/A                                     ; None                                                ; -1.367 ns ; S[0]  ; ZZ[0]_199 ; S[2]     ;
+; N/A                                     ; None                                                ; -1.371 ns ; S[3]  ; ZZ[0]_199 ; S[0]     ;
+; N/A                                     ; None                                                ; -1.377 ns ; S[2]  ; ZZ[0]_199 ; S[0]     ;
+; N/A                                     ; None                                                ; -1.377 ns ; R2[5] ; ZZ[5]     ; FBUS     ;
+; N/A                                     ; None                                                ; -1.378 ns ; S[3]  ; ZZ[0]_199 ; S[3]     ;
+; N/A                                     ; None                                                ; -1.384 ns ; S[2]  ; ZZ[0]_199 ; S[3]     ;
+; N/A                                     ; None                                                ; -1.385 ns ; R2[0] ; ZZ[0]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.392 ns ; R2[0] ; ZZ[0]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.393 ns ; M     ; ZZ[0]_199 ; M        ;
+; N/A                                     ; None                                                ; -1.395 ns ; M     ; ZZ[0]_199 ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.395 ns ; FBUS  ; ZZ[0]_199 ; S[0]     ;
+; N/A                                     ; None                                                ; -1.398 ns ; S[0]  ; ZZ[0]_199 ; M        ;
+; N/A                                     ; None                                                ; -1.400 ns ; S[0]  ; ZZ[0]_199 ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.402 ns ; FBUS  ; ZZ[0]_199 ; S[3]     ;
+; N/A                                     ; None                                                ; -1.404 ns ; R2[7] ; ZZ[8]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.411 ns ; R2[7] ; ZZ[8]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.416 ns ; R1[7] ; ZZ[8]     ; FLBUS    ;
+; N/A                                     ; None                                                ; -1.445 ns ; R1[7] ; ZZ[8]     ; FBUS     ;
+; N/A                                     ; None                                                ; -1.446 ns ; R1[4] ; ZZ[5]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.451 ns ; FRBUS ; ZZ[8]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.453 ns ; R1[4] ; ZZ[5]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.458 ns ; FRBUS ; ZZ[8]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.469 ns ; FBUS  ; ZZ[0]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.488 ns ; R2[6] ; ZZ[6]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.491 ns ; R2[3] ; ZZ[3]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.498 ns ; R1[3] ; ZZ[3]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.505 ns ; S[1]  ; ZZ[0]_199 ; S[1]     ;
+; N/A                                     ; None                                                ; -1.505 ns ; R1[3] ; ZZ[3]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.512 ns ; R1[0] ; ZZ[8]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.528 ns ; R2[7] ; ZZ[7]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.529 ns ; R1[4] ; ZZ[3]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.533 ns ; FRBUS ; ZZ[0]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.535 ns ; R2[7] ; ZZ[7]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.536 ns ; R1[4] ; ZZ[3]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.537 ns ; M     ; ZZ[0]_199 ; FLBUS    ;
+; N/A                                     ; None                                                ; -1.542 ns ; S[0]  ; ZZ[0]_199 ; FLBUS    ;
+; N/A                                     ; None                                                ; -1.544 ns ; FBUS  ; ZZ[0]     ; S[2]     ;
+; N/A                                     ; None                                                ; -1.548 ns ; S[3]  ; ZZ[0]_199 ; S[1]     ;
+; N/A                                     ; None                                                ; -1.554 ns ; S[2]  ; ZZ[0]_199 ; S[1]     ;
+; N/A                                     ; None                                                ; -1.556 ns ; R2[1] ; ZZ[1]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.562 ns ; R2[0] ; ZZ[0]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.563 ns ; R2[6] ; ZZ[6]     ; S[2]     ;
+; N/A                                     ; None                                                ; -1.563 ns ; R2[1] ; ZZ[1]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.566 ns ; M     ; ZZ[0]_199 ; FBUS     ;
+; N/A                                     ; None                                                ; -1.566 ns ; R2[3] ; ZZ[3]     ; S[2]     ;
+; N/A                                     ; None                                                ; -1.571 ns ; S[0]  ; ZZ[0]_199 ; FBUS     ;
+; N/A                                     ; None                                                ; -1.572 ns ; FBUS  ; ZZ[0]_199 ; S[1]     ;
+; N/A                                     ; None                                                ; -1.575 ns ; FBUS  ; ZZ[0]     ; M        ;
+; N/A                                     ; None                                                ; -1.576 ns ; S[0]  ; ZZ[0]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.577 ns ; FBUS  ; ZZ[0]     ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.580 ns ; S[1]  ; ZZ[0]_199 ; S[2]     ;
+; N/A                                     ; None                                                ; -1.581 ns ; R2[7] ; ZZ[8]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.581 ns ; R1[1] ; ZZ[0]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.582 ns ; M     ; ZZ[0]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.583 ns ; S[0]  ; ZZ[0]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.584 ns ; S[1]  ; ZZ[0]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.587 ns ; R1[0] ; ZZ[8]     ; S[2]     ;
+; N/A                                     ; None                                                ; -1.588 ns ; R1[1] ; ZZ[0]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.589 ns ; M     ; ZZ[0]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.589 ns ; R1[4] ; ZZ[8]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.591 ns ; S[1]  ; ZZ[0]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.594 ns ; R2[6] ; ZZ[6]     ; M        ;
+; N/A                                     ; None                                                ; -1.596 ns ; R2[6] ; ZZ[6]     ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.596 ns ; R1[4] ; ZZ[8]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.597 ns ; R2[3] ; ZZ[3]     ; M        ;
+; N/A                                     ; None                                                ; -1.599 ns ; R2[3] ; ZZ[3]     ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.606 ns ; R1[5] ; ZZ[5]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.608 ns ; FRBUS ; ZZ[0]     ; S[2]     ;
+; N/A                                     ; None                                                ; -1.611 ns ; S[1]  ; ZZ[0]_199 ; M        ;
+; N/A                                     ; None                                                ; -1.613 ns ; S[1]  ; ZZ[0]_199 ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.613 ns ; R1[5] ; ZZ[5]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.618 ns ; R1[0] ; ZZ[8]     ; M        ;
+; N/A                                     ; None                                                ; -1.620 ns ; R1[0] ; ZZ[8]     ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.622 ns ; R1[2] ; ZZ[3]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.623 ns ; S[3]  ; ZZ[0]_199 ; S[2]     ;
+; N/A                                     ; None                                                ; -1.623 ns ; R1[4] ; ZZ[5]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.628 ns ; M     ; ZZ[5]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.628 ns ; FRBUS ; ZZ[8]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.629 ns ; S[2]  ; ZZ[0]_199 ; S[2]     ;
+; N/A                                     ; None                                                ; -1.629 ns ; R1[2] ; ZZ[3]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.635 ns ; M     ; ZZ[5]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.637 ns ; R2[0] ; ZZ[0]     ; S[2]     ;
+; N/A                                     ; None                                                ; -1.639 ns ; FRBUS ; ZZ[0]     ; M        ;
+; N/A                                     ; None                                                ; -1.641 ns ; FRBUS ; ZZ[0]     ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.647 ns ; FBUS  ; ZZ[0]_199 ; S[2]     ;
+; N/A                                     ; None                                                ; -1.647 ns ; S[0]  ; ZZ[5]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.647 ns ; R1[4] ; ZZ[7]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.654 ns ; S[3]  ; ZZ[0]_199 ; M        ;
+; N/A                                     ; None                                                ; -1.654 ns ; S[0]  ; ZZ[5]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.654 ns ; R1[4] ; ZZ[7]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.656 ns ; S[3]  ; ZZ[0]_199 ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.656 ns ; R2[7] ; ZZ[8]     ; S[2]     ;
+; N/A                                     ; None                                                ; -1.660 ns ; S[2]  ; ZZ[0]_199 ; M        ;
+; N/A                                     ; None                                                ; -1.662 ns ; S[2]  ; ZZ[0]_199 ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.668 ns ; R1[0] ; ZZ[0]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.668 ns ; R2[0] ; ZZ[0]     ; M        ;
+; N/A                                     ; None                                                ; -1.670 ns ; R2[0] ; ZZ[0]     ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.671 ns ; R1[4] ; ZZ[6]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.675 ns ; R1[3] ; ZZ[3]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.675 ns ; R1[0] ; ZZ[0]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.678 ns ; FBUS  ; ZZ[5]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.678 ns ; FBUS  ; ZZ[0]_199 ; M        ;
+; N/A                                     ; None                                                ; -1.678 ns ; R1[4] ; ZZ[6]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.680 ns ; FBUS  ; ZZ[0]_199 ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.685 ns ; FBUS  ; ZZ[5]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.687 ns ; R2[7] ; ZZ[8]     ; M        ;
+; N/A                                     ; None                                                ; -1.687 ns ; R2[5] ; ZZ[8]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.689 ns ; R2[7] ; ZZ[8]     ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.694 ns ; R2[5] ; ZZ[8]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.696 ns ; R2[0] ; ZZ[3]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.697 ns ; S[2]  ; ZZ[0]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.698 ns ; R1[4] ; ZZ[5]     ; S[2]     ;
+; N/A                                     ; None                                                ; -1.701 ns ; S[0]  ; ZZ[6]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.703 ns ; FRBUS ; ZZ[8]     ; S[2]     ;
+; N/A                                     ; None                                                ; -1.703 ns ; R2[0] ; ZZ[3]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.704 ns ; S[2]  ; ZZ[0]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.705 ns ; R2[7] ; ZZ[7]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.706 ns ; R1[4] ; ZZ[3]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.708 ns ; S[0]  ; ZZ[6]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.714 ns ; R1[1] ; ZZ[3]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.719 ns ; FBUS  ; ZZ[0]     ; FLBUS    ;
+; N/A                                     ; None                                                ; -1.721 ns ; R1[1] ; ZZ[3]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.729 ns ; R1[4] ; ZZ[5]     ; M        ;
+; N/A                                     ; None                                                ; -1.729 ns ; R2[3] ; ZZ[4]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.731 ns ; R1[4] ; ZZ[5]     ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.733 ns ; R2[1] ; ZZ[1]     ; S[1]     ;
+; N/A                                     ; None                                                ; -1.734 ns ; FRBUS ; ZZ[8]     ; M        ;
+; N/A                                     ; None                                                ; -1.735 ns ; M     ; ZZ[3]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.736 ns ; FRBUS ; ZZ[8]     ; FRBUS    ;
+; N/A                                     ; None                                                ; -1.736 ns ; R2[3] ; ZZ[4]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.738 ns ; R2[6] ; ZZ[6]     ; FLBUS    ;
+; N/A                                     ; None                                                ; -1.739 ns ; FBUS  ; ZZ[8]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.741 ns ; R2[3] ; ZZ[3]     ; FLBUS    ;
+; N/A                                     ; None                                                ; -1.742 ns ; M     ; ZZ[3]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.742 ns ; R1[6] ; ZZ[6]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.743 ns ; R2[4] ; ZZ[4]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.744 ns ; FRBUS ; ZZ[5]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.745 ns ; R2[5] ; ZZ[7]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.746 ns ; FBUS  ; ZZ[8]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.748 ns ; FBUS  ; ZZ[0]     ; FBUS     ;
+; N/A                                     ; None                                                ; -1.749 ns ; R1[6] ; ZZ[6]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.749 ns ; R1[1] ; ZZ[1]     ; S[0]     ;
+; N/A                                     ; None                                                ; -1.750 ns ; R2[4] ; ZZ[4]     ; S[3]     ;
+; N/A                                     ; None                                                ; -1.750 ns ; R1[3] ; ZZ[3]     ; S[2]     ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;       ;           ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+-------+-----------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Jan 03 16:47:16 2018
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off ALU -c ALU --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "ZZ[2]" is a latch
+    Warning: Node "ZZ[5]" is a latch
+    Warning: Node "ZZ[7]" is a latch
+    Warning: Node "ZZ[0]" is a latch
+    Warning: Node "ZZ[1]" is a latch
+    Warning: Node "ZZ[4]" is a latch
+    Warning: Node "ZZ[0]_199" is a latch
+    Warning: Node "ZZ[3]" is a latch
+    Warning: Node "ZZ[6]" is a latch
+    Warning: Node "ZZ[8]" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "S[2]" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+    Info: Assuming node "S[1]" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+    Info: Assuming node "S[0]" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+    Info: Assuming node "S[3]" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+    Info: Assuming node "FBUS" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+    Info: Assuming node "FLBUS" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+    Info: Assuming node "FRBUS" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+    Info: Assuming node "M" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+Warning: Found 2 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "ZZ[8]~91" as buffer
+    Info: Detected gated clock "ZZ[8]~90" as buffer
+Info: tsu for register "ZZ[7]" (data pin = "S[3]", clock pin = "FBUS") is 4.678 ns
+    Info: + Longest pin to register delay is 8.558 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.857 ns) = 0.857 ns; Loc. = PIN_AA5; Fanout = 8; CLK Node = 'S[3]'
+        Info: 2: + IC(4.028 ns) + CELL(0.366 ns) = 5.251 ns; Loc. = LCCOMB_X31_Y4_N10; Fanout = 4; COMB Node = 'ZZ[3]~93'
+        Info: 3: + IC(1.275 ns) + CELL(0.346 ns) = 6.872 ns; Loc. = LCCOMB_X26_Y9_N28; Fanout = 1; COMB Node = 'ZZ[7]~121'
+        Info: 4: + IC(0.499 ns) + CELL(0.272 ns) = 7.643 ns; Loc. = LCCOMB_X26_Y9_N24; Fanout = 1; COMB Node = 'ZZ[7]~106'
+        Info: 5: + IC(0.549 ns) + CELL(0.366 ns) = 8.558 ns; Loc. = LCCOMB_X29_Y9_N26; Fanout = 2; REG Node = 'ZZ[7]'
+        Info: Total cell delay = 2.207 ns ( 25.79 % )
+        Info: Total interconnect delay = 6.351 ns ( 74.21 % )
+    Info: + Micro setup delay of destination is 0.604 ns
+    Info: - Shortest clock path from clock "FBUS" to destination register is 4.484 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.857 ns) = 0.857 ns; Loc. = PIN_AB6; Fanout = 11; CLK Node = 'FBUS'
+        Info: 2: + IC(0.874 ns) + CELL(0.225 ns) = 1.956 ns; Loc. = LCCOMB_X31_Y4_N28; Fanout = 1; COMB Node = 'ZZ[8]~91'
+        Info: 3: + IC(1.545 ns) + CELL(0.000 ns) = 3.501 ns; Loc. = CLKCTRL_G5; Fanout = 10; COMB Node = 'ZZ[8]~91clkctrl'
+        Info: 4: + IC(0.930 ns) + CELL(0.053 ns) = 4.484 ns; Loc. = LCCOMB_X29_Y9_N26; Fanout = 2; REG Node = 'ZZ[7]'
+        Info: Total cell delay = 1.135 ns ( 25.31 % )
+        Info: Total interconnect delay = 3.349 ns ( 74.69 % )
+Info: tco from clock "S[0]" to destination pin "Q[0]" through register "ZZ[0]_199" is 9.583 ns
+    Info: + Longest clock path from clock "S[0]" to source register is 4.990 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.800 ns) = 0.800 ns; Loc. = PIN_P5; Fanout = 8; CLK Node = 'S[0]'
+        Info: 2: + IC(1.133 ns) + CELL(0.228 ns) = 2.161 ns; Loc. = LCCOMB_X31_Y4_N4; Fanout = 1; COMB Node = 'ZZ[8]~90'
+        Info: 3: + IC(0.198 ns) + CELL(0.053 ns) = 2.412 ns; Loc. = LCCOMB_X31_Y4_N28; Fanout = 1; COMB Node = 'ZZ[8]~91'
+        Info: 4: + IC(1.545 ns) + CELL(0.000 ns) = 3.957 ns; Loc. = CLKCTRL_G5; Fanout = 10; COMB Node = 'ZZ[8]~91clkctrl'
+        Info: 5: + IC(0.879 ns) + CELL(0.154 ns) = 4.990 ns; Loc. = LCCOMB_X29_Y7_N16; Fanout = 9; REG Node = 'ZZ[0]_199'
+        Info: Total cell delay = 1.235 ns ( 24.75 % )
+        Info: Total interconnect delay = 3.755 ns ( 75.25 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 4.593 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X29_Y7_N16; Fanout = 9; REG Node = 'ZZ[0]_199'
+        Info: 2: + IC(2.443 ns) + CELL(2.150 ns) = 4.593 ns; Loc. = PIN_T21; Fanout = 0; PIN Node = 'Q[0]'
+        Info: Total cell delay = 2.150 ns ( 46.81 % )
+        Info: Total interconnect delay = 2.443 ns ( 53.19 % )
+Info: th for register "ZZ[6]" (data pin = "FRBUS", clock pin = "S[0]") is 1.065 ns
+    Info: + Longest clock path from clock "S[0]" to destination register is 4.941 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.800 ns) = 0.800 ns; Loc. = PIN_P5; Fanout = 8; CLK Node = 'S[0]'
+        Info: 2: + IC(1.133 ns) + CELL(0.228 ns) = 2.161 ns; Loc. = LCCOMB_X31_Y4_N4; Fanout = 1; COMB Node = 'ZZ[8]~90'
+        Info: 3: + IC(0.198 ns) + CELL(0.053 ns) = 2.412 ns; Loc. = LCCOMB_X31_Y4_N28; Fanout = 1; COMB Node = 'ZZ[8]~91'
+        Info: 4: + IC(1.545 ns) + CELL(0.000 ns) = 3.957 ns; Loc. = CLKCTRL_G5; Fanout = 10; COMB Node = 'ZZ[8]~91clkctrl'
+        Info: 5: + IC(0.931 ns) + CELL(0.053 ns) = 4.941 ns; Loc. = LCCOMB_X29_Y9_N20; Fanout = 2; REG Node = 'ZZ[6]'
+        Info: Total cell delay = 1.134 ns ( 22.95 % )
+        Info: Total interconnect delay = 3.807 ns ( 77.05 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: - Shortest pin to register delay is 3.876 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.857 ns) = 0.857 ns; Loc. = PIN_AA6; Fanout = 11; CLK Node = 'FRBUS'
+        Info: 2: + IC(0.924 ns) + CELL(0.346 ns) = 2.127 ns; Loc. = LCCOMB_X31_Y4_N30; Fanout = 1; COMB Node = 'ZZ[6]~103'
+        Info: 3: + IC(0.867 ns) + CELL(0.053 ns) = 3.047 ns; Loc. = LCCOMB_X30_Y9_N26; Fanout = 1; COMB Node = 'ZZ[6]~104'
+        Info: 4: + IC(0.299 ns) + CELL(0.053 ns) = 3.399 ns; Loc. = LCCOMB_X29_Y9_N2; Fanout = 1; COMB Node = 'ZZ[6]~105'
+        Info: 5: + IC(0.249 ns) + CELL(0.228 ns) = 3.876 ns; Loc. = LCCOMB_X29_Y9_N20; Fanout = 2; REG Node = 'ZZ[6]'
+        Info: Total cell delay = 1.537 ns ( 39.65 % )
+        Info: Total interconnect delay = 2.339 ns ( 60.35 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 248 megabytes
+    Info: Processing ended: Wed Jan 03 16:47:16 2018
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

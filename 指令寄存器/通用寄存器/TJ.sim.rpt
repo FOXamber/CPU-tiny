@@ -1,0 +1,348 @@
+Simulator report for TJ
+Sat Dec 22 16:59:56 2018
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 165 nodes    ;
+; Simulation Coverage         ;      84.85 % ;
+; Total Number of Transitions ; 33859        ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Vector input source                                                                        ; TJ.vwf     ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      84.85 % ;
+; Total nodes checked                                 ; 165          ;
+; Total output ports checked                          ; 165          ;
+; Total output ports with complete 1/0-value coverage ; 140          ;
+; Total output ports with no 1/0-value coverage       ; 22           ;
+; Total output ports with no 1-value coverage         ; 22           ;
+; Total output ports with no 0-value coverage         ; 25           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------+
+; Complete 1/0-Value Coverage                              ;
++-------------------+-------------------+------------------+
+; Node Name         ; Output Port Name  ; Output Port Type ;
++-------------------+-------------------+------------------+
+; |TJ|BUSB[1]~0     ; |TJ|BUSB[1]~0     ; out              ;
+; |TJ|BUSB[1]$latch ; |TJ|BUSB[1]$latch ; out              ;
+; |TJ|A~0           ; |TJ|A~0           ; out              ;
+; |TJ|A~1           ; |TJ|A~1           ; out              ;
+; |TJ|A~2           ; |TJ|A~2           ; out              ;
+; |TJ|A~3           ; |TJ|A~3           ; out              ;
+; |TJ|A~4           ; |TJ|A~4           ; out              ;
+; |TJ|A~5           ; |TJ|A~5           ; out              ;
+; |TJ|B~0           ; |TJ|B~0           ; out              ;
+; |TJ|B~1           ; |TJ|B~1           ; out              ;
+; |TJ|B~2           ; |TJ|B~2           ; out              ;
+; |TJ|B~3           ; |TJ|B~3           ; out              ;
+; |TJ|B~4           ; |TJ|B~4           ; out              ;
+; |TJ|B~5           ; |TJ|B~5           ; out              ;
+; |TJ|B~7           ; |TJ|B~7           ; out              ;
+; |TJ|B~8           ; |TJ|B~8           ; out              ;
+; |TJ|B~9           ; |TJ|B~9           ; out              ;
+; |TJ|B~10          ; |TJ|B~10          ; out              ;
+; |TJ|B~11          ; |TJ|B~11          ; out              ;
+; |TJ|B~12          ; |TJ|B~12          ; out              ;
+; |TJ|B~13          ; |TJ|B~13          ; out              ;
+; |TJ|B~15          ; |TJ|B~15          ; out              ;
+; |TJ|C~0           ; |TJ|C~0           ; out              ;
+; |TJ|C~1           ; |TJ|C~1           ; out              ;
+; |TJ|C~2           ; |TJ|C~2           ; out              ;
+; |TJ|C~3           ; |TJ|C~3           ; out              ;
+; |TJ|C~4           ; |TJ|C~4           ; out              ;
+; |TJ|C~5           ; |TJ|C~5           ; out              ;
+; |TJ|C~6           ; |TJ|C~6           ; out              ;
+; |TJ|C~8           ; |TJ|C~8           ; out              ;
+; |TJ|C~9           ; |TJ|C~9           ; out              ;
+; |TJ|C~10          ; |TJ|C~10          ; out              ;
+; |TJ|C~11          ; |TJ|C~11          ; out              ;
+; |TJ|C~12          ; |TJ|C~12          ; out              ;
+; |TJ|C~13          ; |TJ|C~13          ; out              ;
+; |TJ|C~14          ; |TJ|C~14          ; out              ;
+; |TJ|C~16          ; |TJ|C~16          ; out              ;
+; |TJ|C~17          ; |TJ|C~17          ; out              ;
+; |TJ|C~18          ; |TJ|C~18          ; out              ;
+; |TJ|C~19          ; |TJ|C~19          ; out              ;
+; |TJ|C~20          ; |TJ|C~20          ; out              ;
+; |TJ|C~21          ; |TJ|C~21          ; out              ;
+; |TJ|C~22          ; |TJ|C~22          ; out              ;
+; |TJ|A[7]          ; |TJ|A[7]          ; regout           ;
+; |TJ|A[6]          ; |TJ|A[6]          ; regout           ;
+; |TJ|A[5]          ; |TJ|A[5]          ; regout           ;
+; |TJ|A[4]          ; |TJ|A[4]          ; regout           ;
+; |TJ|A[3]          ; |TJ|A[3]          ; regout           ;
+; |TJ|B[7]          ; |TJ|B[7]          ; regout           ;
+; |TJ|B[6]          ; |TJ|B[6]          ; regout           ;
+; |TJ|B[5]          ; |TJ|B[5]          ; regout           ;
+; |TJ|B[4]          ; |TJ|B[4]          ; regout           ;
+; |TJ|B[3]          ; |TJ|B[3]          ; regout           ;
+; |TJ|C[7]          ; |TJ|C[7]          ; regout           ;
+; |TJ|C[6]          ; |TJ|C[6]          ; regout           ;
+; |TJ|C[5]          ; |TJ|C[5]          ; regout           ;
+; |TJ|C[4]          ; |TJ|C[4]          ; regout           ;
+; |TJ|C[3]          ; |TJ|C[3]          ; regout           ;
+; |TJ|BUSB[0]~1     ; |TJ|BUSB[0]~1     ; out              ;
+; |TJ|BUSB[0]~2     ; |TJ|BUSB[0]~2     ; out              ;
+; |TJ|BUSA~18       ; |TJ|BUSA~18       ; out0             ;
+; |TJ|BUSB~18       ; |TJ|BUSB~18       ; out0             ;
+; |TJ|BUSB[1]~3     ; |TJ|BUSB[1]~3     ; out              ;
+; |TJ|BUSB[3]$latch ; |TJ|BUSB[3]$latch ; out              ;
+; |TJ|BUSB[3]~6     ; |TJ|BUSB[3]~6     ; out              ;
+; |TJ|BUSB[3]~7     ; |TJ|BUSB[3]~7     ; out              ;
+; |TJ|BUSB[4]$latch ; |TJ|BUSB[4]$latch ; out              ;
+; |TJ|BUSB[4]~8     ; |TJ|BUSB[4]~8     ; out              ;
+; |TJ|BUSB[4]~9     ; |TJ|BUSB[4]~9     ; out              ;
+; |TJ|BUSB[5]$latch ; |TJ|BUSB[5]$latch ; out              ;
+; |TJ|BUSB[5]~10    ; |TJ|BUSB[5]~10    ; out              ;
+; |TJ|BUSB[5]~11    ; |TJ|BUSB[5]~11    ; out              ;
+; |TJ|BUSB[6]$latch ; |TJ|BUSB[6]$latch ; out              ;
+; |TJ|BUSB[6]~12    ; |TJ|BUSB[6]~12    ; out              ;
+; |TJ|BUSB[6]~13    ; |TJ|BUSB[6]~13    ; out              ;
+; |TJ|BUSB[7]$latch ; |TJ|BUSB[7]$latch ; out              ;
+; |TJ|BUSB[7]~14    ; |TJ|BUSB[7]~14    ; out              ;
+; |TJ|BUSB[7]~15    ; |TJ|BUSB[7]~15    ; out0             ;
+; |TJ|BUSB[7]~16    ; |TJ|BUSB[7]~16    ; out              ;
+; |TJ|BUSB[7]~17    ; |TJ|BUSB[7]~17    ; out0             ;
+; |TJ|BUSA[0]$latch ; |TJ|BUSA[0]$latch ; out              ;
+; |TJ|BUSA[0]~0     ; |TJ|BUSA[0]~0     ; out              ;
+; |TJ|BUSA[0]~1     ; |TJ|BUSA[0]~1     ; out              ;
+; |TJ|BUSA[1]$latch ; |TJ|BUSA[1]$latch ; out              ;
+; |TJ|BUSA[1]~2     ; |TJ|BUSA[1]~2     ; out              ;
+; |TJ|BUSA[1]~3     ; |TJ|BUSA[1]~3     ; out              ;
+; |TJ|BUSA[3]$latch ; |TJ|BUSA[3]$latch ; out              ;
+; |TJ|BUSA[3]~6     ; |TJ|BUSA[3]~6     ; out              ;
+; |TJ|BUSA[3]~7     ; |TJ|BUSA[3]~7     ; out              ;
+; |TJ|BUSA[4]$latch ; |TJ|BUSA[4]$latch ; out              ;
+; |TJ|BUSA[4]~8     ; |TJ|BUSA[4]~8     ; out              ;
+; |TJ|BUSA[4]~9     ; |TJ|BUSA[4]~9     ; out              ;
+; |TJ|BUSA[5]$latch ; |TJ|BUSA[5]$latch ; out              ;
+; |TJ|BUSA[5]~10    ; |TJ|BUSA[5]~10    ; out              ;
+; |TJ|BUSA[5]~11    ; |TJ|BUSA[5]~11    ; out              ;
+; |TJ|BUSA[6]$latch ; |TJ|BUSA[6]$latch ; out              ;
+; |TJ|BUSA[6]~12    ; |TJ|BUSA[6]~12    ; out              ;
+; |TJ|BUSA[6]~13    ; |TJ|BUSA[6]~13    ; out              ;
+; |TJ|BUSA[7]$latch ; |TJ|BUSA[7]$latch ; out              ;
+; |TJ|BUSA[7]~14    ; |TJ|BUSA[7]~14    ; out              ;
+; |TJ|BUSA[7]~15    ; |TJ|BUSA[7]~15    ; out0             ;
+; |TJ|BUSA[7]~16    ; |TJ|BUSA[7]~16    ; out              ;
+; |TJ|BUSA[7]~17    ; |TJ|BUSA[7]~17    ; out0             ;
+; |TJ|BUSB[0]$latch ; |TJ|BUSB[0]$latch ; out              ;
+; |TJ|RAA1          ; |TJ|RAA1          ; out              ;
+; |TJ|RAA0          ; |TJ|RAA0          ; out              ;
+; |TJ|RWBA1         ; |TJ|RWBA1         ; out              ;
+; |TJ|RWBA0         ; |TJ|RWBA0         ; out              ;
+; |TJ|WE            ; |TJ|WE            ; out              ;
+; |TJ|clk           ; |TJ|clk           ; out              ;
+; |TJ|BUSC[0]       ; |TJ|BUSC[0]       ; out              ;
+; |TJ|BUSC[1]       ; |TJ|BUSC[1]       ; out              ;
+; |TJ|BUSC[2]       ; |TJ|BUSC[2]       ; out              ;
+; |TJ|BUSC[3]       ; |TJ|BUSC[3]       ; out              ;
+; |TJ|BUSC[4]       ; |TJ|BUSC[4]       ; out              ;
+; |TJ|BUSC[5]       ; |TJ|BUSC[5]       ; out              ;
+; |TJ|BUSC[6]       ; |TJ|BUSC[6]       ; out              ;
+; |TJ|BUSC[7]       ; |TJ|BUSC[7]       ; out              ;
+; |TJ|BUSA[0]       ; |TJ|BUSA[0]       ; pin_out          ;
+; |TJ|BUSA[1]       ; |TJ|BUSA[1]       ; pin_out          ;
+; |TJ|BUSA[3]       ; |TJ|BUSA[3]       ; pin_out          ;
+; |TJ|BUSA[4]       ; |TJ|BUSA[4]       ; pin_out          ;
+; |TJ|BUSA[5]       ; |TJ|BUSA[5]       ; pin_out          ;
+; |TJ|BUSA[6]       ; |TJ|BUSA[6]       ; pin_out          ;
+; |TJ|BUSA[7]       ; |TJ|BUSA[7]       ; pin_out          ;
+; |TJ|BUSB[0]       ; |TJ|BUSB[0]       ; pin_out          ;
+; |TJ|BUSB[1]       ; |TJ|BUSB[1]       ; pin_out          ;
+; |TJ|BUSB[3]       ; |TJ|BUSB[3]       ; pin_out          ;
+; |TJ|BUSB[4]       ; |TJ|BUSB[4]       ; pin_out          ;
+; |TJ|BUSB[5]       ; |TJ|BUSB[5]       ; pin_out          ;
+; |TJ|BUSB[6]       ; |TJ|BUSB[6]       ; pin_out          ;
+; |TJ|BUSB[7]       ; |TJ|BUSB[7]       ; pin_out          ;
+; |TJ|Equal0~0      ; |TJ|Equal0~0      ; out0             ;
+; |TJ|Equal1~0      ; |TJ|Equal1~0      ; out0             ;
+; |TJ|Equal2~0      ; |TJ|Equal2~0      ; out0             ;
+; |TJ|Equal3~0      ; |TJ|Equal3~0      ; out0             ;
+; |TJ|Equal4~0      ; |TJ|Equal4~0      ; out0             ;
+; |TJ|Equal5~0      ; |TJ|Equal5~0      ; out0             ;
+; |TJ|Equal6~0      ; |TJ|Equal6~0      ; out0             ;
+; |TJ|Equal7~0      ; |TJ|Equal7~0      ; out0             ;
++-------------------+-------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------+
+; Missing 1-Value Coverage                                 ;
++-------------------+-------------------+------------------+
+; Node Name         ; Output Port Name  ; Output Port Type ;
++-------------------+-------------------+------------------+
+; |TJ|A~6           ; |TJ|A~6           ; out              ;
+; |TJ|A~7           ; |TJ|A~7           ; out              ;
+; |TJ|B~6           ; |TJ|B~6           ; out              ;
+; |TJ|B~14          ; |TJ|B~14          ; out              ;
+; |TJ|C~7           ; |TJ|C~7           ; out              ;
+; |TJ|C~15          ; |TJ|C~15          ; out              ;
+; |TJ|C~23          ; |TJ|C~23          ; out              ;
+; |TJ|A[2]          ; |TJ|A[2]          ; regout           ;
+; |TJ|A[1]          ; |TJ|A[1]          ; regout           ;
+; |TJ|A[0]          ; |TJ|A[0]          ; regout           ;
+; |TJ|B[2]          ; |TJ|B[2]          ; regout           ;
+; |TJ|B[1]          ; |TJ|B[1]          ; regout           ;
+; |TJ|C[2]          ; |TJ|C[2]          ; regout           ;
+; |TJ|C[0]          ; |TJ|C[0]          ; regout           ;
+; |TJ|BUSB[2]$latch ; |TJ|BUSB[2]$latch ; out              ;
+; |TJ|BUSB[2]~4     ; |TJ|BUSB[2]~4     ; out              ;
+; |TJ|BUSB[2]~5     ; |TJ|BUSB[2]~5     ; out              ;
+; |TJ|BUSA[2]$latch ; |TJ|BUSA[2]$latch ; out              ;
+; |TJ|BUSA[2]~4     ; |TJ|BUSA[2]~4     ; out              ;
+; |TJ|BUSA[2]~5     ; |TJ|BUSA[2]~5     ; out              ;
+; |TJ|BUSA[2]       ; |TJ|BUSA[2]       ; pin_out          ;
+; |TJ|BUSB[2]       ; |TJ|BUSB[2]       ; pin_out          ;
++-------------------+-------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------+
+; Missing 0-Value Coverage                                 ;
++-------------------+-------------------+------------------+
+; Node Name         ; Output Port Name  ; Output Port Type ;
++-------------------+-------------------+------------------+
+; |TJ|A~6           ; |TJ|A~6           ; out              ;
+; |TJ|A~7           ; |TJ|A~7           ; out              ;
+; |TJ|B~6           ; |TJ|B~6           ; out              ;
+; |TJ|B~14          ; |TJ|B~14          ; out              ;
+; |TJ|C~7           ; |TJ|C~7           ; out              ;
+; |TJ|C~15          ; |TJ|C~15          ; out              ;
+; |TJ|C~23          ; |TJ|C~23          ; out              ;
+; |TJ|A[2]          ; |TJ|A[2]          ; regout           ;
+; |TJ|A[1]          ; |TJ|A[1]          ; regout           ;
+; |TJ|A[0]          ; |TJ|A[0]          ; regout           ;
+; |TJ|B[2]          ; |TJ|B[2]          ; regout           ;
+; |TJ|B[1]          ; |TJ|B[1]          ; regout           ;
+; |TJ|B[0]          ; |TJ|B[0]          ; regout           ;
+; |TJ|C[2]          ; |TJ|C[2]          ; regout           ;
+; |TJ|C[1]          ; |TJ|C[1]          ; regout           ;
+; |TJ|C[0]          ; |TJ|C[0]          ; regout           ;
+; |TJ|BUSB[2]$latch ; |TJ|BUSB[2]$latch ; out              ;
+; |TJ|BUSB[2]~4     ; |TJ|BUSB[2]~4     ; out              ;
+; |TJ|BUSB[2]~5     ; |TJ|BUSB[2]~5     ; out              ;
+; |TJ|BUSA[2]$latch ; |TJ|BUSA[2]$latch ; out              ;
+; |TJ|BUSA[2]~4     ; |TJ|BUSA[2]~4     ; out              ;
+; |TJ|BUSA[2]~5     ; |TJ|BUSA[2]~5     ; out              ;
+; |TJ|resect        ; |TJ|resect        ; out              ;
+; |TJ|BUSA[2]       ; |TJ|BUSA[2]       ; pin_out          ;
+; |TJ|BUSB[2]       ; |TJ|BUSB[2]       ; pin_out          ;
++-------------------+-------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Dec 22 16:59:56 2018
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off TJ -c TJ
+Info: Using vector source file "C:/Users/apple/Desktop/cpu/Í¨ÓÃ¼Ä´æÆ÷/TJ.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      84.85 %
+Info: Number of transitions in simulation is 33859
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 177 megabytes
+    Info: Processing ended: Sat Dec 22 16:59:56 2018
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

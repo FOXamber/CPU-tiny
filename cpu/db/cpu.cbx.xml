@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="cpu">
+		<CBX_INST_ENTRY INSTANCE_NAME="|cpu|ALU:inst19|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_lnh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|cpu|ALU:inst19|lpm_add_sub:Add1" CBX_FILE_NAME="add_sub_toh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|cpu|JSQ:inst1|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_8rh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|cpu|LPM_RAM_IO:inst|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_c591.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity csq is
+port(
+	clk,reset:in std_logic;
+	SM:out std_logic
+);
+end csq;
+architecture zz of csq is
+signal Q1:std_logic;
+begin
+	process(clk,reset)
+	begin
+		if(reset='0')then
+			Q1<='0';
+		elsif(clk'event and clk='0')then
+			if(Q1='0')then
+				Q1<='1';
+			else
+				Q1<='0';
+			end if;
+		end if;
+	end process;
+	SM<=not Q1;
+end zz;
